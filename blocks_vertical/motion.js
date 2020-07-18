@@ -582,3 +582,285 @@ Blockly.Blocks['motion_yscroll'] = {
     });
   }
 };
+
+
+//dev-motion
+
+Blockly.Blocks.motion.MOTOR_ID_MENU_OPEION = [
+  ['1', '1'],
+  ['2', '2']
+];
+
+Blockly.Blocks.motion.PORT_MENU_OPEION = [
+  ['M1', 'M1'],
+  ['M2', 'M2'],
+  ['M3', 'M3'],
+  ['M4', 'M4']
+];
+
+
+Blockly.Blocks['motion_set_encoder_motor'] = {
+  /**
+   * Block set encoder motor.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_ENCODER_MOTOR,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "MOTOR_ID",
+          "options": Blockly.Blocks.motion.MOTOR_ID_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.motion.PORT_MENU_OPEION
+        },
+        {
+          "type": "input_value",
+          "name": "POWER"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks['motion_set_dc_motor'] = {
+  /**
+   * Block set DC motor.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_DC_MOTOR,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "MOTOR_ID",
+          "options": Blockly.Blocks.motion.MOTOR_ID_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.motion.PORT_MENU_OPEION
+        },
+        {
+          "type": "input_value",
+          "name": "POWER"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks['motion_smart_servo_angle'] = {
+  /**
+   * Block servo.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SMART_SERVO_ANGLE,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "SERVO_ID"
+        },
+        {
+          "type": "input_value",
+          "name": "SPEED"
+        },
+        {
+          "type": "input_value",
+          "name": "ANGLE"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks['motion_smart_servo'] = {
+  /**
+   * Block servo.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SMART_SERVO,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "SERVO_ID"
+        },
+        {
+          "type": "input_value",
+          "name": "SPEED"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks.motion.DIGITAL_PORT_MENU_OPEION = [
+  ['D2', 'D2'],
+  ['D3', 'D3'],
+  ['D4', 'D4'],
+  ['D5', 'D5'],
+  ['D6', 'D6'],
+  ['D7', 'D7'],
+  ['D8', 'D8'],
+  ['D9', 'D9'],
+];
+
+Blockly.Blocks['motion_servo'] = {
+  /**
+   * Block servo.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SERVO,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "SERVO_PORT",
+          "options": Blockly.Blocks.motion.DIGITAL_PORT_MENU_OPEION
+        },
+        {
+          "type": "input_value",
+          "name": "SPEED"
+        },
+        {
+          "type": "input_value",
+          "name": "ANGLE"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks.motion.STEP_MOTOR_PORT_MENU_OPEION = [
+  ['1', '1'],
+  ['2', '2'],
+  ['3', '3'],
+  ['4', '4']
+];
+
+Blockly.Blocks['motion_step_motor'] = {
+  /**
+   * Block step motor.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_STEP_MOTOR,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.motion.STEP_MOTOR_PORT_MENU_OPEION
+        },
+        {
+          "type": "input_value",
+          "name": "POWER"
+        },
+        {
+          "type": "input_value",
+          "name": "STEPS"
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks.motion.ELECTRONMAGNET_PORT_MENU_OPEION = [
+  ['1', '1'],
+  ['2', '2'],
+  ['3', '3'],
+  ['4', '4'],
+  ['5', '6'],
+  ['6', '7']
+];
+
+Blockly.Blocks.motion.ELECTRONMAGNET_STATUS_MENU_OPEION = [
+  ['吸附', '1'],
+  ['断开', '2']
+];
+
+Blockly.Blocks['motion_set_electromagnet'] = {
+  /**
+   * Block set electromagnet.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_SET_ELECTROMAGNET,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.motion.ELECTRONMAGNET_PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "STATUS",
+          "options": Blockly.Blocks.motion.ELECTRONMAGNET_STATUS_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks.motion.DIGITAL_OUTPUT_STATUS_MENU_OPEION = [
+  ['接通', '1'],
+  ['断开', '2']
+];
+
+Blockly.Blocks['motion_set_digital_output'] = {
+  /**
+   * Block set digital output.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.MOTION_DIGITAL_OUTPUT,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.motion.DIGITAL_PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "STATUS",
+          "options": Blockly.Blocks.motion.DIGITAL_OUTPUT_STATUS_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.motion,
+      "extensions": ["colours_motion", "shape_statement"]
+    });
+  }
+};

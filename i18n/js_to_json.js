@@ -12,9 +12,18 @@ const PATH_OUTPUT = path.resolve(__dirname, '../msg/json/en.json');
 
 // Match function
 const match = function (str) {
-    if (str.indexOf('Blockly.Msg.') !== 0) return false;
-    assert.notStrictEqual(str.indexOf('";'), str.length - 2, `[${str}] uses double quoted string, should use single quotes.`);
-    if (str.indexOf("';") !== str.length - 2) return false;
+    //console.log("--" + str.length + "|" + str + "--\n");
+
+    if (str.indexOf('Blockly.Msg.') !== 0) {
+        console.log(" (" + str + ") " + str.indexOf('Blockly.Msg.') + " [A]");
+        return false;
+    } 
+    assert.notStrictEqual(str.indexOf('";'), str.length - 3, `[${str}] uses double quoted string, should use single quotes.`);
+    if (str.indexOf("';") !== str.length - 3) {
+
+        console.log(" (" + str.indexOf("';") + ") <> (" + (str.length - 3) + ") [B]");
+        return false;
+    } 
     return true;
 }
 
@@ -36,7 +45,10 @@ const stream = fs.createReadStream(PATH_INPUT);
 stream
     .pipe(es.split('\n'))
     .pipe(es.mapSync(function (str) {
-        if (!match(str)) return;
+        if (!match(str)) {
+            console.log("match error", str);
+            return;
+        } 
         const result = extract(str);
         storage[result.key] = result.value;
     }))

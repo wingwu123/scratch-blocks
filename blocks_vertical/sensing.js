@@ -537,3 +537,456 @@ Blockly.Blocks['sensing_userid'] = {
     });
   }
 };
+
+Blockly.Blocks.sensing.PORT_MENU_OPEION = [
+  ['1', '1'],
+  ['2', '2'],
+  ['3', '3'],
+  ['4', '4'],
+  ['5', '5'],
+  ['6', '6']
+];
+
+Blockly.Blocks.sensing.LINE_MENU_OPEION = [
+  ['黑线', '1'],
+  ['白线', '2']
+];
+
+Blockly.Blocks['sensing_gray_detected_line'] = {
+  /**
+   * Block gray detected line.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_GRAY_DETECTED_LINE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "LINE",
+          "options": Blockly.Blocks.sensing.LINE_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_boolean"]
+    });
+  }
+};
+
+
+Blockly.Blocks['sensing_gray_value'] = {
+  /**
+   * Block gray value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_GRAY_VALUE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks['sensing_flame_value'] = {
+  /**
+   * Block flame value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_FLAME_VALUE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+
+Blockly.Blocks['sensing_temperature_value'] = {
+  /**
+   * Block flame value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_TEMPERATURE_VALUE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_humidity_value'] = {
+  /**
+   * Block humidity value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_HUMIDITY_VALUE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks['sensing_volume_value'] = {
+  /**
+   * Block volume value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_VOLUME_VALUE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks['sensing_ambient_light_value'] = {
+  /**
+   * Block ambient light value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_AMBIENT_VALUE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_ultrasonic_detection_distance'] = {
+  /**
+   * Block ultrasonic detection distance.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_ULTRASONIC_DISTANCE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks['sensing_gas_pressure'] = {
+  /**
+   * Block gas pressure.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_GAS_PRESSURE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks['sensing_infrared_receiver'] = {
+  /**
+   * Block infrared receiver.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_INFRARED_RECEIVER,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks['sensing_potentiometer'] = {
+  /**
+   * Block potentiometer.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_POTENTIOMETER,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks['sensing_bluetooth_receiver'] = {
+  /**
+   * Block bluetooth receiver.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_BLUETOOTH_RECEIVER,
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks.sensing.AXIS_MENU_OPEION = [
+  ['X轴', '1'],
+  ['Y轴', '2']
+];
+
+Blockly.Blocks['sensing_jointed_arm'] = {
+  /**
+   * Block jointed arm.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_JOINTED_ARM,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "AXIS",
+          "options": Blockly.Blocks.sensing.AXIS_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+
+Blockly.Blocks.sensing.KEY_MENU_OPEION = [
+  ['1', '1'],
+  ['2', '2'],
+  ['3', '3'],
+  ['4', '4']
+];
+
+Blockly.Blocks['sensing_touch_button'] = {
+  /**
+   * Block touch button.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_TOUCH_BUTTON,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "KEY",
+          "options": Blockly.Blocks.sensing.KEY_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_boolean"]
+    });
+  }
+};
+
+
+
+Blockly.Blocks.sensing.AXIS_THREE_MENU_OPEION = [
+  ['X', '1'],
+  ['Y', '2'],
+  ['Z', '3']
+];
+
+Blockly.Blocks['sensing_gyroscope'] = {
+  /**
+   * Block gyroscope.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_GYROSCOPE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "AXIS",
+          "options": Blockly.Blocks.sensing.AXIS_THREE_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks['sensing_limit_switch'] = {
+  /**
+   * Block limit switch.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_LIMIT_SWITCH,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_boolean"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_water_temperature'] = {
+  /**
+   * Block water temperature.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_WATER_TEMPERATURE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+Blockly.Blocks.sensing.ANALOG_PORT_MENU_OPEION = [
+  ['A12', '1'],
+  ['A13', '2'],
+  ['A14', '3'],
+  ['A15', '4'],
+  ['A16', '5']
+];
+
+Blockly.Blocks['sensing_analog_input'] = {
+  /**
+   * Block Analog input.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_ANALOG_INPUT,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.ANALOG_PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
+
+
+

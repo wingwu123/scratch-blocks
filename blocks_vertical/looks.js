@@ -587,3 +587,262 @@ Blockly.Blocks['looks_nextbackdrop'] = {
     });
   }
 };
+
+Blockly.Blocks.looks.EMOTION_ID_MENU_OPEION = [
+  ['表情1', '1'],
+  ['表情2', '2']
+];
+
+Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION = [
+  ['1', '1'],
+  ['2', '2'],
+  ['3', '3'],
+  ['4', '4']
+];
+
+Blockly.Blocks['looks_set_emotion'] = {
+  /**
+   * Block set emotion.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_SET_EMOTION,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "EMOTION_ID",
+          "options": Blockly.Blocks.looks.EMOTION_ID_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "LEFT_PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "RIGHT_PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['looks_off_emotion'] = {
+  /**
+   * Block set emotion.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_OFF_EMOTION,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "LEFT_PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "RIGHT_PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks.looks.SYMBOL_ID_MENU_OPEION = [
+  ['符号1', '1'],
+  ['符号2', '2']
+];
+
+Blockly.Blocks['looks_set_symbol'] = {
+  /**
+   * Block set symbel.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_SET_SYMBOL,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "SYMBOL",
+          "options": Blockly.Blocks.looks.SYMBOL_ID_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['looks_off_led_matrix'] = {
+  /**
+   * Block off led matrix.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_OFF_LED_MATRIX,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks['looks_set_digital_tube'] = {
+  /**
+   * Block off led matrix.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_SET_DIGITAL_TUBE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        },
+        {
+          "type": "input_value",
+          "name": "VALUE"
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks['looks_clear_digital_tube'] = {
+  /**
+   * Block clear digital tube.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_CLEAR_DIGITAL_TUBE,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks['looks_set_led_light_rgb'] = {
+  /**
+   * Block set led light RGB.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_SET_LED_LIGHT_RGB,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        },
+        {
+          "type": "input_value",
+          "name": "R"
+        },
+        {
+          "type": "input_value",
+          "name": "G"
+        },
+        {
+          "type": "input_value",
+          "name": "B"
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks.looks.LED_COLOR_MENU_OPEION = [
+  ['红', '1'],
+  ['绿', '2'],
+  ['蓝', '3']
+];
+
+Blockly.Blocks['looks_set_led_light_color'] = {
+  /**
+   * Block set led light color.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_SET_LED_LIGHT_COLOR,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "COLOR",
+          "options": Blockly.Blocks.looks.LED_COLOR_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks['looks_off_led_light'] = {
+  /**
+   * Block off led light.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_OFF_LED_LIGHT,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};

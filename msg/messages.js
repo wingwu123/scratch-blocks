@@ -140,6 +140,17 @@ Blockly.Msg.LOOKS_NEXTBACKDROP = 'next backdrop';
 Blockly.Msg.LOOKS_PREVIOUSBACKDROP = 'previous backdrop';
 Blockly.Msg.LOOKS_RANDOMBACKDROP = 'random backdrop';
 
+//dev-looks
+Blockly.Msg.LOOKS_SET_EMOTION = 'Set emotion screen ID %1 left eye port %2 right eye port %3';
+Blockly.Msg.LOOKS_OFF_EMOTION = 'Off emotion screen left eye port %2 right eye port %3';
+Blockly.Msg.LOOKS_SET_SYMBOL = 'Set symbol ID %1 port %2';
+Blockly.Msg.LOOKS_OFF_LED_MATRIX = 'Off emotion screen port %1';
+Blockly.Msg.LOOKS_SET_DIGITAL_TUBE = 'Set digital tube port %1 value %2';
+Blockly.Msg.LOOKS_CLEAR_DIGITAL_TUBE = 'Clear digital tube port %1';
+Blockly.Msg.LOOKS_SET_LED_LIGHT_RGB = 'Set LED light port %1 R %2 G %3 B %4';
+Blockly.Msg.LOOKS_SET_LED_LIGHT_COLOR = 'Set LED light port %1 color %2';
+Blockly.Msg.LOOKS_OFF_LED_LIGHT = 'Off LED light port %1';
+
 // Motion blocks
 Blockly.Msg.MOTION_MOVESTEPS = 'move %1 steps';
 Blockly.Msg.MOTION_TURNLEFT = 'turn %1 %2 degrees';
@@ -179,6 +190,16 @@ Blockly.Msg.MOTION_ALIGNSCENE_TOPRIGHT = 'top-right';
 Blockly.Msg.MOTION_XSCROLL = 'x scroll';
 Blockly.Msg.MOTION_YSCROLL = 'y scroll';
 Blockly.Msg.MOTION_STAGE_SELECTED = 'Stage selected: no motion blocks';
+
+//dev-motion
+Blockly.Msg.MOTION_ENCODER_MOTOR = 'Set encoder motor ID %1 port %2 power %3';
+Blockly.Msg.MOTION_DC_MOTOR = 'Set DC motor ID %1 port %2 power %3';
+Blockly.Msg.MOTION_SMART_SERVO_ANGLE = 'Set smart servo ID %1 speed %2 angle %3';
+Blockly.Msg.MOTION_SMART_SERVO = 'Set smart servo ID %1 speed %2';
+Blockly.Msg.MOTION_SERVO = 'Set servo ID %1 port %2 power %3';
+Blockly.Msg.MOTION_STEP_MOTOR = 'Set step motor port %1 power %2 steps %3';
+Blockly.Msg.MOTION_SET_ELECTROMAGNET = 'Set electromagnet port %1 status %2';
+Blockly.Msg.MOTION_DIGITAL_OUTPUT = 'Set digital output port %1 status %2';
 
 // Operators blocks
 Blockly.Msg.OPERATORS_ADD = '%1 + %2';
@@ -264,6 +285,27 @@ Blockly.Msg.SENSING_CURRENT_SECOND = 'second';
 Blockly.Msg.SENSING_DAYSSINCE2000 = 'days since 2000';
 Blockly.Msg.SENSING_USERNAME = 'username';
 Blockly.Msg.SENSING_USERID = 'user id';
+
+//dev-sensing 
+Blockly.Msg.SENSING_GRAY_DETECTED_LINE = 'Single gray port %1 detected %2';
+Blockly.Msg.SENSING_GRAY_VALUE = 'Single gray port %1 value';
+Blockly.Msg.SENSING_FLAME_VALUE = 'Flame sensor port %1 value';
+Blockly.Msg.SENSING_TEMPERATURE_VALUE = 'Temperature sensor port %1 value';
+Blockly.Msg.SENSING_HUMIDITY_VALUE = 'Humidity sensor port %1 value';
+Blockly.Msg.SENSING_VOLUME_VALUE = 'Volume detecting port %1';
+Blockly.Msg.SENSING_AMBIENT_VALUE = 'Ambient light port %1 value';
+Blockly.Msg.SENSING_ULTRASONIC_DISTANCE = 'Ultrasonic sensor port %1 detection distance';
+
+Blockly.Msg.SENSING_GAS_PRESSURE = 'Gas pressure sensor port %1 value';
+Blockly.Msg.SENSING_INFRARED_RECEIVER = 'Infrared receiver port %1 value';
+Blockly.Msg.SENSING_POTENTIOMETER = 'Potentiometer port %1 value';
+Blockly.Msg.SENSING_BLUETOOTH_RECEIVER = 'Bluetooth receiver value';
+Blockly.Msg.SENSING_JOINTED_ARM = 'Jointed arm port %1 axis %2 value';
+Blockly.Msg.SENSING_TOUCH_BUTTON = 'Touch button port %1 key %2 pressed';
+Blockly.Msg.SENSING_GYROSCOPE = 'Gyroscope sensor port %1 axis %2 angle value';
+Blockly.Msg.SENSING_LIMIT_SWITCH = 'Limit switch port %1 pressed';
+Blockly.Msg.SENSING_WATER_TEMPERATURE = 'Water temperature sensor port %1 value';
+Blockly.Msg.SENSING_ANALOG_INPUT = 'Analog input port %1 value';
 
 // Sound blocks
 Blockly.Msg.SOUND_PLAY = 'start sound %1';
