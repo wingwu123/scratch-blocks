@@ -40,6 +40,7 @@ if sys.version_info[0] != 2:
                   "You are using: " + sys.version)
 
 import errno, glob, httplib, json, os, re, subprocess, threading, urllib
+import codecs
 
 REMOTE_COMPILER = "remote"
 
@@ -229,6 +230,7 @@ class Gen_compressed(threading.Thread):
     self.gen_blocks("horizontal")
     self.gen_blocks("vertical")
     self.gen_blocks("common")
+    self.gen_generator()
 
   def gen_core(self, vertical):
     if vertical:
@@ -295,6 +297,33 @@ class Gen_compressed(threading.Thread):
 
     # Remove Blockly.Blocks to be compatible with Blockly.
     remove = "var Blockly={Blocks:{}};"
+    self.do_compile(params, target_filename, filenames, remove)
+
+  def gen_generator(self):
+
+    target_filename = "generator_compressed_vertical.js"
+    filenames = glob.glob(os.path.join("generators", "*.js"))
+    filenames += glob.glob(os.path.join("generators/javascript", "*.js"))
+    filenames += glob.glob(os.path.join("generators/python", "*.js"))
+    filenames += glob.glob(os.path.join("generators/clang", "*.js"))
+
+    # glob.glob ordering is platform-dependent and not necessary deterministic
+    filenames.sort()  # Deterministic build.
+
+    # Define the parameters for the POST request.
+    params = [
+      ("compilation_level", "SIMPLE"),
+    ]
+
+    params.append(("js_file", os.path.join("build", "gen_generator.js")))
+
+    for filename in filenames:
+      # Append filenames as false arguments the step before compiling will
+      # either transform them into arguments for local or remote compilation
+      params.append(("js_file", filename))
+
+    # Remove Blockly.Blocks to be compatible with Blockly.
+    remove = "var Blockly={Generator:{},utils:{}};Blockly.utils.global={};Blockly.utils.string={};"
     self.do_compile(params, target_filename, filenames, remove)
 
   def do_compile(self, params, target_filename, filenames, remove):
