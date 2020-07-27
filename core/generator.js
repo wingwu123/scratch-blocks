@@ -159,11 +159,12 @@ Blockly.Generator.prototype.allNestedComments = function(block) {
 /**
  * Generate code for the specified block (and attached blocks).
  * @param {Blockly.Block} block The block to generate code for.
+ * @param {boolean=} opt_thisOnly True to generate code for only this statement.
  * @return {string|!Array} For statement blocks, the generated code.
  *     For value blocks, an array containing the generated code and an
  *     operator order value.  Returns '' if block is null.
  */
-Blockly.Generator.prototype.blockToCode = function(block) {
+Blockly.Generator.prototype.blockToCode = function(block, opt_thisOnly = false) {
   if (!block) {
     return '';
   }
@@ -173,9 +174,7 @@ Blockly.Generator.prototype.blockToCode = function(block) {
   }
 
   var func = this[block.type];
-
-  console.log(" blockToCode block.type ", block.type, "func[" + func + "]");
-
+  
   goog.asserts.assertFunction(func,
       'Language "%s" does not know how to generate code for block type "%s".',
       this.name_, block.type);
@@ -188,14 +187,14 @@ Blockly.Generator.prototype.blockToCode = function(block) {
     // Value blocks return tuples of code and operator order.
     goog.asserts.assert(block.outputConnection,
         'Expecting string from statement block "%s".', block.type);
-    return [this.scrub_(block, code[0]), code[1]];
+    return [this.scrub_(block, code[0], opt_thisOnly), code[1]];
   } else if (goog.isString(code)) {
     var id = block.id.replace(/\$/g, '$$$$');  // Issue 251.
     if (this.STATEMENT_PREFIX) {
       code = this.STATEMENT_PREFIX.replace(/%1/g, '\'' + id + '\'') +
           code;
     }
-    return this.scrub_(block, code);
+    return this.scrub_(block, code, opt_thisOnly);
   } else if (code === null) {
     // Block has handled code generation itself.
     return '';
@@ -426,4 +425,9 @@ Blockly.Generator.prototype.finish = function(code) {
 Blockly.Generator.prototype.scrubNakedValue = function(line) {
   // Optionally override
   return line;
+};
+
+Blockly.Generator.prototype.isArray = function(code) {
+  // Optionally override
+  return goog.isArray(code);
 };

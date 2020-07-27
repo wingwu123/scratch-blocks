@@ -10,21 +10,209 @@
  */
 'use strict';
 
-goog.provide('Blockly.Clang.math');
+goog.provide('Blockly.Clang.operators');
 
 goog.require('Blockly.Clang');
 
 
-Blockly.Clang['math_number'] = function(block) {
-  // Numeric value.
-  var code = Number(block.getFieldValue('NUM'));
-  var order = code >= 0 ? Blockly.Clang.ORDER_ATOMIC :
-              Blockly.Clang.ORDER_UNARY_NEGATION;
+Blockly.Clang['operator_add'] = function(block) {
+
+  var operator = ' + ';
+  var order = Blockly.Clang.ORDER_ADDITION;
+  var argument0 = Blockly.Clang.valueToCode(block, 'NUM1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'NUM2', order) || '0';
+  var code;
+
+  code = argument0 + operator + argument1;
   return [code, order];
+
+};
+
+Blockly.Clang['operator_subtract'] = function(block) {
+
+  var operator = ' - ';
+  var order = Blockly.Clang.ORDER_SUBTRACTION;
+  var argument0 = Blockly.Clang.valueToCode(block, 'NUM1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'NUM2', order) || '0';
+  var code;
+
+  code = argument0 + operator + argument1;
+  return [code, order];
+
+};
+
+Blockly.Clang['operator_multiply'] = function(block) {
+
+  var operator = ' * ';
+  var order = Blockly.Clang.ORDER_MULTIPLICATION;
+  var argument0 = Blockly.Clang.valueToCode(block, 'NUM1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'NUM2', order) || '0';
+  var code;
+
+  code = argument0 + operator + argument1;
+  return [code, order];
+
+};
+
+Blockly.Clang['operator_divide'] = function(block) {
+
+  var operator = ' / ';
+  var order = Blockly.Clang.ORDER_DIVISION;
+  var argument0 = Blockly.Clang.valueToCode(block, 'NUM1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'NUM2', order) || '0';
+  var code;
+
+  code = argument0 + operator + argument1;
+  return [code, order];
+
 };
 
 
-Blockly.Clang['math_whole_number'] = function(block) {
+Blockly.Clang['operator_random'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_COMMA;
+  var from = Blockly.Clang.valueToCode(block, 'FROM', order) || '0';
+  var to = Blockly.Clang.valueToCode(block, 'TO', order) || '0';
+  var code;
+
+  code = 'random(' + from +', ' + to + ')';
+  return [code, Blockly.Clang.ORDER_FUNCTION_CALL];
+
+};
+
+
+Blockly.Clang['operator_lt'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_RELATIONAL;
+  var argument0 = Blockly.Clang.valueToCode(block, 'OPERAND1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'OPERAND2', order) || '0';
+  var code;
+
+  code = '' + argument0 +' < ' + argument1 + '';
+  return [code, order];
+
+};
+
+
+Blockly.Clang['operator_equals'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_EQUALITY;
+  var argument0 = Blockly.Clang.valueToCode(block, 'OPERAND1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'OPERAND2', order) || '0';
+  var code;
+
+  code = '' + argument0 +' == ' + argument1 + '';
+  return [code, order];
+
+};
+
+
+Blockly.Clang['operator_gt'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_RELATIONAL;
+  var argument0 = Blockly.Clang.valueToCode(block, 'OPERAND1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'OPERAND2', order) || '0';
+  var code;
+
+  code = '' + argument0 +' > ' + argument1 + '';
+  return [code, order];
+
+};
+
+
+Blockly.Clang['operator_and'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_LOGICAL_AND;
+  var argument0 = Blockly.Clang.valueToCode(block, 'OPERAND1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'OPERAND2', order) || '0';
+  var code;
+
+  code = '' + argument0 +' && ' + argument1 + '';
+  return [code, order];
+
+};
+
+Blockly.Clang['operator_or'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_LOGICAL_OR;
+  var argument0 = Blockly.Clang.valueToCode(block, 'OPERAND1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'OPERAND2', order) || '0';
+  var code;
+
+  code = '' + argument0 +' && ' + argument1 + '';
+  return [code, order];
+
+};
+
+Blockly.Clang['operator_not'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_LOGICAL_NOT;
+  var argument0 = Blockly.Clang.valueToCode(block, 'OPERAND', order) || '0';
+  var code;
+
+  code = '!' + argument0;
+  return [code, order];
+
+};
+
+
+Blockly.Clang['operator_mod'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_COMMA;
+  var argument0 = Blockly.Clang.valueToCode(block, 'NUM1', order) || '0';
+  var argument1 = Blockly.Clang.valueToCode(block, 'NUM2', order) || '0';
+  var code;
+
+  code = 'mod(' + argument0 +', ' + argument1 + ')';
+  return [code, Blockly.Clang.ORDER_FUNCTION_CALL];
+
+};
+
+
+Blockly.Clang['operator_round'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_NONE;
+  var argument0 = Blockly.Clang.valueToCode(block, 'NUM', order) || '0';
+  var code;
+
+  code = 'round(' + argument0 + ')';
+  return [code, Blockly.Clang.ORDER_FUNCTION_CALL];
+
+};
+
+Blockly.Clang['operator_mathop'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_NONE;
+
+  var argument0 = Blockly.Clang.valueToCode(block, 'NUM', order) || '0';
+  var code;
+
+  var mathop = {
+    'abs': 'abs',
+    'floor': 'floor',
+    'ceiling': 'ceiling',
+    'sqrt': 'sqrt',
+    'sin': 'sin',
+    'cos': 'cos',
+    'tan': 'tan',
+    'asin': 'asin',
+    'acos': 'acos',
+    'atan': 'atan',
+    'ln': 'ln',
+    'log': 'log',
+    'e ^': 'exp',
+    '10 ^': 'pow10'
+  };
+
+  var operator = mathop[block.getFieldValue('OPERATOR')];
+
+  code = operator + '( ' + argument0 + ' )';
+  return [code, Blockly.Clang.ORDER_FUNCTION_CALL];
+
+};
+
+
+Blockly.Clang['math_number'] = function(block) {
   // Numeric value.
   var code = Number(block.getFieldValue('NUM'));
   var order = code >= 0 ? Blockly.Clang.ORDER_ATOMIC :

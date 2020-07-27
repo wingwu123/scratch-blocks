@@ -588,6 +588,8 @@ Blockly.Blocks['looks_nextbackdrop'] = {
   }
 };
 
+//dev-looks
+
 Blockly.Blocks.looks.EMOTION_ID_MENU_OPEION = [
   ['表情1', '1'],
   ['表情2', '2']
@@ -622,7 +624,8 @@ Blockly.Blocks['looks_set_emotion'] = {
         {
           "type": "field_dropdown",
           "name": "RIGHT_PORT",
-          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION,
+          "defValue": 1
         }
       ],
       "category": Blockly.Categories.looks,
@@ -648,7 +651,8 @@ Blockly.Blocks['looks_off_emotion'] = {
         {
           "type": "field_dropdown",
           "name": "RIGHT_PORT",
-          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION,
+          "defValue": 1
         }
       ],
       "category": Blockly.Categories.looks,

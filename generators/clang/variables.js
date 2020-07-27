@@ -30,3 +30,35 @@ Blockly.Clang['variables_set'] = function(block) {
       block.getFieldValue('VAR'), Blockly.VARIABLE_CATEGORY_NAME);
   return varName + ' = ' + argument0 + ';\n';
 };
+
+//dev-variable
+
+
+Blockly.Clang['data_variable'] = function(block) {
+  // Variable getter.
+  var code = Blockly.Clang.variableDB_.getName(block.getFieldValue('VARIABLE'),
+      Blockly.VARIABLE_CATEGORY_NAME);
+  return [code, Blockly.Clang.ORDER_ATOMIC];
+};
+
+Blockly.Clang['data_setvariableto'] = function(block) {
+  // Variable setter.
+  var argument0 = Blockly.Clang.valueToCode(block, 'VALUE',
+      Blockly.Clang.ORDER_ASSIGNMENT) || '0';
+  var varName = Blockly.Clang.variableDB_.getName(
+      block.getFieldValue('VARIABLE'), Blockly.VARIABLE_CATEGORY_NAME);
+
+  argument0 = Blockly.Clang.trimQuote(argument0);
+
+  return varName + ' = ' + argument0 + ';\n';
+};
+
+
+Blockly.Clang['data_changevariableby'] = function(block) {
+  // Variable setter.
+  var argument0 = Blockly.Clang.valueToCode(block, 'VALUE',
+      Blockly.Clang.ORDER_ASSIGNMENT) || '0';
+  var varName = Blockly.Clang.variableDB_.getName(
+      block.getFieldValue('VARIABLE'), Blockly.VARIABLE_CATEGORY_NAME);
+  return varName + ' += ' + argument0 + ';\n';
+};

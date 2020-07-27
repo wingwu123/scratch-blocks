@@ -111,3 +111,92 @@ Blockly.Clang['procedures_ifreturn'] = function(block) {
   code += '}\n';
   return code;
 };
+
+
+//dev-procedures
+
+
+Blockly.Clang['procedures_definition'] = function(block) {
+  // Call a procedure with no return value.
+  // Generated code is for a function call as a statement is the same as a
+  // function call as a value, with the addition of line ending.
+  var prototype_block = block.getInputTargetBlock('custom_block');
+
+  var nextBlock = block.getNextBlock();
+  var procName = Blockly.Clang.functionName(prototype_block.procCode_.split(' ')[0]);
+  var params = prototype_block.displayNames_.map(p => Blockly.Clang.paramName(p));
+  var line = '';
+
+  if(nextBlock)
+  {
+    line = Blockly.Clang.blockToCode(nextBlock);
+    if(Blockly.Clang.isArray(line))
+    {
+      line = line[0];
+    }
+    line = Blockly.Clang.prefixLines(line, Blockly.Clang.INDENT);
+  }
+
+  params = params.map(p => 'float ' + p);
+
+  var code = 'void ' + Blockly.Clang.FUNCTION_NAME_PLACEHOLDER_ + '(' + params.join(', ') + '){\n' + line + '}';
+
+  Blockly.Clang.provideFunction_(procName, [code]);
+
+  return '';
+};
+
+Blockly.Clang.BooleanValues = ['true', 'false'];
+
+Blockly.Clang['procedures_call'] = function(block) {
+  // Call a procedure with no return value.
+  // Generated code is for a function call as a statement is the same as a
+  // function call as a value, with the addition of line ending.
+
+  console.log('argumentDefaults_ ', JSON.stringify(block.argumentDefaults_));
+
+  var code = '';
+  var procName = Blockly.Clang.functionName(block.procCode_.split(' ')[0]);
+  var args = [];
+  for (let i = 0; i < block.argumentIds_.length; i++) {
+      var line = Blockly.Clang.valueToCode(block, block.argumentIds_[i],
+      Blockly.Clang.ORDER_NONE);
+      line = Blockly.Clang.trimQuote(line);
+
+      if(!line)
+      {
+        line = (Blockly.Clang.BooleanValues.indexOf(line) != -1) ? line : '0';
+
+      }
+      args.push(line);
+  }
+
+  code = procName + '(' + args.join(', ') + ');';
+
+  return code + '\n';
+};
+
+
+Blockly.Clang['argument_reporter_boolean'] = function(block) {
+  // Call a procedure with no return value.
+  // Generated code is for a function call as a statement is the same as a
+  // function call as a value, with the addition of line ending.
+
+  var code = Blockly.Clang.paramName(block.getFieldValue('VALUE'));
+
+  return [code, Blockly.Clang.ORDER_ATOMIC];
+};
+
+
+Blockly.Clang['argument_reporter_string_number'] = function(block) {
+  // Call a procedure with no return value.
+  // Generated code is for a function call as a statement is the same as a
+  // function call as a value, with the addition of line ending.
+
+  var code = Blockly.Clang.paramName(block.getFieldValue('VALUE'));
+
+  return [code, Blockly.Clang.ORDER_ATOMIC];
+};
+
+
+

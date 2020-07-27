@@ -153,8 +153,61 @@ Blockly.Clang.init = function(workspace) {
   // Declare all of the variables.
   if (defvars.length) {
     Blockly.Clang.definitions_['variables'] =
-        'var ' + defvars.join(', ') + ';';
+        'float ' + defvars.join(' = 0.0, ') + ' = 0.0;';
   }
+};
+
+/**
+ * Generate code for all blocks in the workspace to Clang.
+ * @param {Blockly.Workspace} workspace Workspace to generate code from.
+ * @return {string} Generated code.
+ */
+Blockly.Clang.workspaceToCode = function(workspace) {
+  if (!workspace) {
+    // Backwards compatibility from before there could be multiple workspaces.
+    console.warn('No workspace specified in workspaceToCode call.  Guessing.');
+    workspace = Blockly.getMainWorkspace();
+  }
+
+  console.log("Blockly.Clang.workspaceToCode");
+
+  var code = [];
+  this.init(workspace);
+  var blocks = workspace.getTopBlocks(true);
+  var procedures = blocks.filter((b) => {
+    return b.type == 'procedures_definition';
+  });
+  var otherBlocks = blocks.filter((b) => {
+    return b.type != 'procedures_definition';
+  });
+
+  for (var x = 0, block; block = procedures[x]; x++) {
+    this.blockToCode(block, true);
+  }
+
+  for (var x = 0, block; block = otherBlocks[x]; x++) {
+    var line = this.blockToCode(block);
+    if (this.isArray(line)) {
+      // Value blocks return tuples of code and operator order.
+      // Top-level blocks don't care about operator order.
+      line = line[0];
+    }
+    if (line) {
+      if (block.outputConnection && this.scrubNakedValue) {
+        // This block is a naked value.  Ask the language's code generator if
+        // it wants to append a semicolon, or something.
+        line = this.scrubNakedValue(line);
+      }
+      code.push(line);
+    }
+  }
+  code = code.join('\n');  // Blank line between each section.
+  code = this.finish(code);
+  // Final scrubbing of whitespace.
+  code = code.replace(/^\s+\n/, '');
+  code = code.replace(/\n\s+$/, '\n');
+  code = code.replace(/[ \t]+\n/g, '\n');
+  return code;
 };
 
 /**
@@ -168,10 +221,17 @@ Blockly.Clang.finish = function(code) {
   for (var name in Blockly.Clang.definitions_) {
     definitions.push(Blockly.Clang.definitions_[name]);
   }
+
   // Clean up temporary data.
   delete Blockly.Clang.definitions_;
   delete Blockly.Clang.functionNames_;
   Blockly.Clang.variableDB_.reset();
+
+  code = Blockly.Clang.prefixLines(code, Blockly.Clang.INDENT);
+
+  code = 'void setup(){\n' + code + '\n}';
+  code += '\nvoid loop(){\n\n}\n';
+
   return definitions.join('\n\n') + '\n\n\n' + code;
 };
 
@@ -199,6 +259,25 @@ Blockly.Clang.quote_ = function(string) {
                  .replace(/\n/g, '\\\n')
                  .replace(/'/g, '\\\'');
   return '\'' + string + '\'';
+};
+/**
+ * trim quotation
+ * quotes.
+ * @param {string} string.
+ * @return {string} string.
+ */
+Blockly.Clang.trimQuote = function (string) {
+
+  if (string) {
+    if (string.charAt(0) == '\'' && string.charAt(string.length - 1) == '\'') {
+      string = string.substr(1, string.length - 2);
+    }
+    else if (string.charAt(0) == '"' && string.charAt(string.length - 1) == '"') {
+      string = string.substr(1, string.length - 2);
+    }
+  }
+
+  return string;
 };
 
 /**
@@ -317,3 +396,25 @@ Blockly.Clang.getAdjusted = function(block, atId, opt_delta, opt_negate,
   }
   return at;
 };
+
+Blockly.Clang.identifier = function (name, prefix = '') {
+  if (!name) {
+    name = '';
+  }
+
+  // Unfortunately names in non-latin characters will look like
+  // _E9_9F_B3_E4_B9_90 which is pretty meaningless.
+  // https://github.com/google/blockly/issues/1654
+  name = encodeURI(name.replace(/ /g, '_')).replace(/[^\w]/g, '_');
+
+  return prefix + name;
+};
+
+Blockly.Clang.functionName = function(name) {
+  return Blockly.Clang.identifier(name,'func_');
+}
+
+Blockly.Clang.paramName = function(name) {
+  return Blockly.Clang.identifier(name,'p_');
+}
+

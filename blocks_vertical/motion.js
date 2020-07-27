@@ -592,10 +592,10 @@ Blockly.Blocks.motion.MOTOR_ID_MENU_OPEION = [
 ];
 
 Blockly.Blocks.motion.PORT_MENU_OPEION = [
-  ['M1', 'M1'],
-  ['M2', 'M2'],
-  ['M3', 'M3'],
-  ['M4', 'M4']
+  ['M1', '1'],
+  ['M2', '2'],
+  ['M3', '3'],
+  ['M4', '4']
 ];
 
 
@@ -611,12 +611,14 @@ Blockly.Blocks['motion_set_encoder_motor'] = {
         {
           "type": "field_dropdown",
           "name": "MOTOR_ID",
-          "options": Blockly.Blocks.motion.MOTOR_ID_MENU_OPEION
+          "options": Blockly.Blocks.motion.MOTOR_ID_MENU_OPEION,
+          "defValue": 0
         },
         {
           "type": "field_dropdown",
           "name": "PORT",
-          "options": Blockly.Blocks.motion.PORT_MENU_OPEION
+          "options": Blockly.Blocks.motion.PORT_MENU_OPEION,
+          "defValue": 0
         },
         {
           "type": "input_value",
@@ -716,14 +718,14 @@ Blockly.Blocks['motion_smart_servo'] = {
 
 
 Blockly.Blocks.motion.DIGITAL_PORT_MENU_OPEION = [
-  ['D2', 'D2'],
-  ['D3', 'D3'],
-  ['D4', 'D4'],
-  ['D5', 'D5'],
-  ['D6', 'D6'],
-  ['D7', 'D7'],
-  ['D8', 'D8'],
-  ['D9', 'D9'],
+  ['D2', '2'],
+  ['D3', '3'],
+  ['D4', '4'],
+  ['D5', '5'],
+  ['D6', '6'],
+  ['D7', '7'],
+  ['D8', '8'],
+  ['D9', '9'],
 ];
 
 Blockly.Blocks['motion_servo'] = {
