@@ -229,10 +229,16 @@ Blockly.Clang.finish = function(code) {
 
   code = Blockly.Clang.prefixLines(code, Blockly.Clang.INDENT);
 
-  code = 'void setup(){\n' + code + '\n}';
-  code += '\nvoid loop(){\n\n}\n';
+  code = 'void _setup(){\n' + code + '\n}';
 
-  return definitions.join('\n\n') + '\n\n\n' + code;
+  let includes = ['#include "whalesbot.h"'];
+
+  let defaultFunc = ['void setup() {',
+                      '  board_init();',
+                      '}'];
+
+  return includes.join('\n') + '\n\n' + defaultFunc.join('\n') 
+  + '\n\n' + definitions.join('\n\n') + '\n\n\n' + code;
 };
 
 /**
