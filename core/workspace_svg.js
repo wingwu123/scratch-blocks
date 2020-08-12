@@ -305,6 +305,8 @@ Blockly.WorkspaceSvg.prototype.inverseScreenCTM_ = null;
  */
 Blockly.WorkspaceSvg.prototype.inverseScreenCTMDirty_ = true;
 
+Blockly.WorkspaceSvg.prototype.listVarVisible = true;
+
 /**
  * Getter for the inverted screen CTM.
  * @return {SVGMatrix} The matrix to use in mouseToSvg
@@ -329,6 +331,17 @@ Blockly.WorkspaceSvg.prototype.getInverseScreenCTM = function() {
  * @return {boolean} Whether the workspace is visible.  False if the workspace has been hidden
  * by calling `setVisible(false)`.
  */
+Blockly.WorkspaceSvg.prototype.setlistVarVisible = function(p_visible) {
+  var changed = (this.listVarVisible != p_visible);
+  this.listVarVisible = p_visible;
+  /*
+  if (changed && this.options.languageTree && this.flyout_) {
+    this.flyout_.show(this.options.languageTree.childNodes);
+  }
+  */
+
+};
+
 Blockly.WorkspaceSvg.prototype.isVisible = function() {
   return this.isVisible_;
 };

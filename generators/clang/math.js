@@ -24,13 +24,8 @@ Blockly.Clang['math_number'] = function(block) {
 };
 
 
-Blockly.Clang['math_whole_number'] = function(block) {
-  // Numeric value.
-  var code = Number(block.getFieldValue('NUM'));
-  var order = code >= 0 ? Blockly.Clang.ORDER_ATOMIC :
-              Blockly.Clang.ORDER_UNARY_NEGATION;
-  return [code, order];
-};
+Blockly.Clang['math_whole_number'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_positive_number'] = Blockly.Clang['math_number'];
 
 Blockly.Clang['math_arithmetic'] = function(block) {
   // Basic arithmetic operators, and power.

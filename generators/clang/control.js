@@ -14,6 +14,18 @@ goog.provide('Blockly.Clang.control');
 
 goog.require('Blockly.Clang');
 
+Blockly.Clang['control_wait'] = function(block) {
+
+  var code = '', branchCode, times;
+
+  times = Blockly.Clang.valueToCode(block, 'DURATION',
+    Blockly.Clang.ORDER_RELATIONAL) || '0';
+
+  code += 'delay_sec(' + times + ');';
+
+  return code + '\n';
+};
+
 
 Blockly.Clang['control_forever'] = function(block) {
 
@@ -95,8 +107,22 @@ Blockly.Clang['control_if_else'] = function(block) {
   return code + '\n';
 };
 
+Blockly.Clang['control_wait_until'] = function(block) {
+
+  var code = '', branchCode, conditionCode;
+
+  conditionCode = Blockly.Clang.valueToCode(block, 'CONDITION',
+    Blockly.Clang.ORDER_NONE) || 'true';
+
+  code += 'while (! (' + conditionCode + ')) {\n delay_ms(100);\n}';
+
+  return code + '\n';
+};
+
 
 Blockly.Clang['control_repeat_until'] = function(block) {
+
+  console.log(' Clang control_repeat_until');
 
   var code = '', branchCode, conditionCode;
 
@@ -105,7 +131,7 @@ Blockly.Clang['control_repeat_until'] = function(block) {
 
   branchCode = Blockly.Clang.statementToCode(block, 'SUBSTACK') || '';
 
-  code += 'while (! (' + times + ')) {\n' + branchCode + '}';
+  code += 'while (! (' + conditionCode + ')) {\n' + branchCode + '}';
 
   return code + '\n';
 };

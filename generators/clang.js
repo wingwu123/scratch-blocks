@@ -177,15 +177,16 @@ Blockly.Clang.workspaceToCode = function(workspace) {
   var procedures = blocks.filter((b) => {
     return b.type == 'procedures_definition';
   });
-  var otherBlocks = blocks.filter((b) => {
-    return b.type != 'procedures_definition';
+
+  var eventBlocks = blocks.filter((b) => {
+    return b.type == 'event_when_wobot_started';
   });
 
   for (var x = 0, block; block = procedures[x]; x++) {
     this.blockToCode(block, true);
   }
 
-  for (var x = 0, block; block = otherBlocks[x]; x++) {
+  for (var x = 0, block; block = eventBlocks[x]; x++) {
     var line = this.blockToCode(block);
     if (this.isArray(line)) {
       // Value blocks return tuples of code and operator order.

@@ -61,6 +61,13 @@ Blockly.DataCategory = function(workspace) {
     Blockly.DataCategory.addHideVariable(xmlList, firstVariable);
   }
 
+  console.log("DataCategory setlistVarVisible ", workspace.listVarVisible);
+
+  if(!workspace.listVarVisible)
+  {
+    return xmlList;
+  }
+
   // Now add list variables to the flyout
   Blockly.DataCategory.addCreateButton(xmlList, workspace, 'LIST');
   variableModelList = workspace.getVariablesOfType(Blockly.LIST_VARIABLE_TYPE);

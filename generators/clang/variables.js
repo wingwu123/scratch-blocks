@@ -45,12 +45,21 @@ Blockly.Clang['data_setvariableto'] = function(block) {
   // Variable setter.
   var argument0 = Blockly.Clang.valueToCode(block, 'VALUE',
       Blockly.Clang.ORDER_ASSIGNMENT) || '0';
-  var varName = Blockly.Clang.variableDB_.getName(
-      block.getFieldValue('VARIABLE'), Blockly.VARIABLE_CATEGORY_NAME);
 
-  argument0 = Blockly.Clang.trimQuote(argument0);
+  console.log('data_setvariableto', '['+ block.getFieldValue('VARIABLE') +']');
 
-  return varName + ' = ' + argument0 + ';\n';
+  var varName = block.getFieldValue('VARIABLE');
+  var code = '';
+
+  if (varName) {
+    varName = Blockly.Clang.variableDB_.getName(varName, Blockly.VARIABLE_CATEGORY_NAME);
+
+    argument0 = Blockly.Clang.trimQuote(argument0);
+
+    code =  varName + ' = ' + argument0 + ';\n';
+  }
+
+  return code;
 };
 
 
@@ -58,7 +67,12 @@ Blockly.Clang['data_changevariableby'] = function(block) {
   // Variable setter.
   var argument0 = Blockly.Clang.valueToCode(block, 'VALUE',
       Blockly.Clang.ORDER_ASSIGNMENT) || '0';
-  var varName = Blockly.Clang.variableDB_.getName(
-      block.getFieldValue('VARIABLE'), Blockly.VARIABLE_CATEGORY_NAME);
-  return varName + ' += ' + argument0 + ';\n';
+  var varName = block.getFieldValue('VARIABLE');
+  var code = '';
+  if (varName) {
+    varName = Blockly.Clang.variableDB_.getName(varName, Blockly.VARIABLE_CATEGORY_NAME);
+    code =  varName + ' += ' + argument0 + ';\n';
+  }
+  
+  return code;
 };

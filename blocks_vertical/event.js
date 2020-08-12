@@ -326,3 +326,22 @@ Blockly.Blocks['event_whenkeypressed'] = {
     });
   }
 };
+
+
+//dev
+
+
+Blockly.Blocks['event_when_wobot_started'] = {
+  /**
+   * 
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.EVENT_WHEN_WOBOT_STARTED,
+      "category": Blockly.Categories.event,
+      "extensions": ["colours_event", "shape_hat"]
+    });
+  }
+
+};

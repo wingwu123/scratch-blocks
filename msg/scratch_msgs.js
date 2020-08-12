@@ -4084,6 +4084,9 @@ Blockly.ScratchMsgs.locales["en"] =
     "EVENT_WHENKEYPRESSED_DOWN": "down arrow",
     "EVENT_WHENKEYPRESSED_UP": "up arrow",
     "EVENT_WHENKEYPRESSED_ANY": "any",
+
+    "EVENT_WHEN_WOBOT_STARTED": "when WOBOT started",
+
     "LOOKS_SAYFORSECS": "say %1 for %2 seconds",
     "LOOKS_SAY": "say %1",
     "LOOKS_HELLO": "Hello!",
@@ -17896,6 +17899,9 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "EVENT_WHENKEYPRESSED_DOWN": "↓",
     "EVENT_WHENKEYPRESSED_UP": "↑",
     "EVENT_WHENKEYPRESSED_ANY": "任意",
+
+    "EVENT_WHEN_WOBOT_STARTED": "当 WOBOT 启动",
+
     "LOOKS_SAYFORSECS": "说 %1 %2 秒",
     "LOOKS_SAY": "说 %1",
     "LOOKS_HELLO": "你好！",
@@ -18218,6 +18224,9 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "EVENT_WHENKEYPRESSED_DOWN": "向下",
     "EVENT_WHENKEYPRESSED_UP": "向上",
     "EVENT_WHENKEYPRESSED_ANY": "任何",
+
+    "EVENT_WHEN_WOBOT_STARTED": "當 WOBOT 启动",
+
     "LOOKS_SAYFORSECS": "說出 %1 持續 %2 秒",
     "LOOKS_SAY": "說出 %1",
     "LOOKS_HELLO": "Hello!",
