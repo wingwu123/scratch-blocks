@@ -49,6 +49,7 @@ goog.require('Blockly.FieldTextInputRemovable');
 goog.require('Blockly.FieldTextDropdown');
 goog.require('Blockly.FieldNumber');
 goog.require('Blockly.FieldNumberDropdown');
+goog.require('Blockly.FieldDecimal');
 goog.require('Blockly.FieldMatrix');
 goog.require('Blockly.FieldVariable');
 goog.require('Blockly.FieldVerticalSeparator');

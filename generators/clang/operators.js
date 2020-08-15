@@ -87,6 +87,10 @@ Blockly.Clang['operator_lt'] = function(block) {
   var argument0 = Blockly.Clang.valueToCode(block, 'OPERAND1', order) || '0';
   var argument1 = Blockly.Clang.valueToCode(block, 'OPERAND2', order) || '0';
   var code;
+  argument0 = Blockly.Clang.trimQuote(argument0);
+  argument0 = argument0 || '0';
+  argument1 = Blockly.Clang.trimQuote(argument1);
+  argument1 = argument1 || '0';
 
   code = '' + argument0 +' < ' + argument1 + '';
   return [code, order];
@@ -100,6 +104,10 @@ Blockly.Clang['operator_equals'] = function(block) {
   var argument0 = Blockly.Clang.valueToCode(block, 'OPERAND1', order) || '0';
   var argument1 = Blockly.Clang.valueToCode(block, 'OPERAND2', order) || '0';
   var code;
+  argument0 = Blockly.Clang.trimQuote(argument0);
+  argument0 = argument0 || '0';
+  argument1 = Blockly.Clang.trimQuote(argument1);
+  argument1 = argument1 || '0';
 
   code = '' + argument0 +' == ' + argument1 + '';
   return [code, order];
@@ -113,6 +121,11 @@ Blockly.Clang['operator_gt'] = function(block) {
   var argument0 = Blockly.Clang.valueToCode(block, 'OPERAND1', order) || '0';
   var argument1 = Blockly.Clang.valueToCode(block, 'OPERAND2', order) || '0';
   var code;
+
+  argument0 = Blockly.Clang.trimQuote(argument0);
+  argument0 = argument0 || '0';
+  argument1 = Blockly.Clang.trimQuote(argument1);
+  argument1 = argument1 || '0';
 
   code = '' + argument0 +' > ' + argument1 + '';
   return [code, order];

@@ -18,6 +18,7 @@ goog.require('Blockly.Clang');
 Blockly.Clang['math_number'] = function(block) {
   // Numeric value.
   var code = Number(block.getFieldValue('NUM'));
+  code = isNaN(code) ? Number(0) : code;
   var order = code >= 0 ? Blockly.Clang.ORDER_ATOMIC :
               Blockly.Clang.ORDER_UNARY_NEGATION;
   return [code, order];
@@ -25,7 +26,19 @@ Blockly.Clang['math_number'] = function(block) {
 
 
 Blockly.Clang['math_whole_number'] = Blockly.Clang['math_number'];
-Blockly.Clang['math_positive_number'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_positive_number'] = Blockly.Clang['math_number']; 
+
+Blockly.Clang['math_decimal'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_whole'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_0_60s'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_m100_p100'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_0_100'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_m150_p150'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_1_30'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_0_180'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_0_1k'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_0_255'] = Blockly.Clang['math_number'];
+
 
 Blockly.Clang['math_arithmetic'] = function(block) {
   // Basic arithmetic operators, and power.

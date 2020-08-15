@@ -105,6 +105,298 @@ Blockly.Blocks['math_whole_number'] = {
   }
 };
 
+/**
+ * validator use example
+ * 
+Blockly.Blocks['example'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": -100, "max": 100},
+            {"type":"regexp", "pattern": /^-{0,1}(([0-9]{0,6})|([0-9]{0,6}\.\d{0,2}))$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+ */
+
+Blockly.Blocks['math_decimal'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"regexp", "pattern": /^-{0,1}(([0-9]{0,6})|([0-9]{0,6}\.\d{0,2}))$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+/**
+ * 最多6位正整数
+ */
+Blockly.Blocks['math_decimal_whole'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"regexp", "pattern": /^([0-9]{0,6})$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+Blockly.Blocks['math_decimal_0_60s'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": 0, "max": 60},
+            {"type":"regexp", "pattern": /^(([0-9]{0,6})|([0-9]{0,6}\.\d{0,2}))$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+Blockly.Blocks['math_decimal_m100_p100'] = {
+  /**
+   * Block for whole number value, no negatives or decimals.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": -100, "max": 100},
+            {"type":"regexp", "pattern": /^-{0,1}([0-9]{0,6})$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+
+Blockly.Blocks['math_decimal_0_100'] = {
+  /**
+   * Block for whole number value, no negatives or decimals.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": 0, "max": 100},
+            {"type":"regexp", "pattern": /^-{0,1}([0-9]{0,6})$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+
+Blockly.Blocks['math_decimal_m150_p150'] = {
+  /**
+   * Block for whole number value, no negatives or decimals.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": -150, "max": 150},
+            {"type":"regexp", "pattern": /^-{0,1}([0-9]{0,6})$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+
+Blockly.Blocks['math_decimal_1_30'] = {
+  /**
+   * Block for whole number value, no negatives or decimals.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": 1, "max": 30},
+            {"type":"regexp", "pattern": /^([0-9]{0,6})$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+
+Blockly.Blocks['math_decimal_0_180'] = {
+  /**
+   * Block for whole number value, no negatives or decimals.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": 0, "max": 180},
+            {"type":"regexp", "pattern": /^([0-9]{0,6})$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+Blockly.Blocks['math_decimal_0_1k'] = {
+  /**
+   * Block for whole number value, no negatives or decimals.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": 0, "max": 1000},
+            {"type":"regexp", "pattern": /^([0-9]{0,6})$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+
+Blockly.Blocks['math_decimal_0_255'] = {
+  /**
+   * Block for whole number value, no negatives or decimals.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": 0, "max": 255},
+            {"type":"regexp", "pattern": /^([0-9]{0,6})$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
 Blockly.Blocks['math_positive_number'] = {
   /**
    * Block for positive number value, with decimal.
