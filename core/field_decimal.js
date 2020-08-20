@@ -70,13 +70,11 @@ Blockly.FieldDecimal.createMinmaxValidator = function(min, max){
 
     if(num < min)
     {
-      console.log('minmax error ', text, num, min, max);
       fieldObject.recommValue = '' + min;
       return false;
     }
     if(num > max)
     {
-      console.log('minmax error ', text, num, min, max);
       fieldObject.recommValue = '' + max;
       return false;
     }
@@ -90,7 +88,6 @@ Blockly.FieldDecimal.createRegExpValidator = function(pattern){
     let ret = pattern.test(text);
     if(!ret)
     {
-      console.log('regexp error ', text);
     }
     return ret;
   };
@@ -184,8 +181,6 @@ Blockly.FieldDecimal.prototype.onHtmlInputChange_ = function(e) {
   {
     if(!this.test(text))
     {
-      console.log("test error ", this.getText());
-
       if(!!this.recommValue){
         htmlInput.value = this.recommValue;
       }

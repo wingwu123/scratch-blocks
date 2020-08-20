@@ -604,17 +604,24 @@ Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION = [
 
 Blockly.Blocks['looks_set_emotion'] = {
   /**
-   * Block set emotion.
+   * Block set emotion. matrix
    * @this Blockly.Block
    */
   init: function() {
     this.jsonInit({
       "message0": Blockly.Msg.LOOKS_SET_EMOTION,
       "args0": [
+        /*
         {
           "type": "field_dropdown",
           "name": "EMOTION_ID",
           "options": Blockly.Blocks.looks.EMOTION_ID_MENU_OPEION
+        },
+        */
+        {
+          "type": "input_value",
+          "name": "EMOTION_ID"
+        
         },
         {
           "type": "field_dropdown",
@@ -676,10 +683,42 @@ Blockly.Blocks['looks_set_symbol'] = {
     this.jsonInit({
       "message0": Blockly.Msg.LOOKS_SET_SYMBOL,
       "args0": [
+        /*
         {
           "type": "field_dropdown",
           "name": "SYMBOL",
           "options": Blockly.Blocks.looks.SYMBOL_ID_MENU_OPEION
+        },*/
+        {
+          "type": "input_value",
+          "name": "SYMBOL"
+        },
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['looks_custom_led_matrix'] = {
+  /**
+   * Block off led matrix.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_CUSTOM_LED_MATRIX,
+      "args0": [
+        {
+          "type": "field_matrix",
+          "name": "MATRIX",
+          "matrix": "0000000001110000111110011011101011111111111111100111100000000000",
+          "shape": 8,
         },
         {
           "type": "field_dropdown",

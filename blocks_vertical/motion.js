@@ -718,14 +718,14 @@ Blockly.Blocks['motion_smart_servo'] = {
 
 
 Blockly.Blocks.motion.DIGITAL_PORT_MENU_OPEION = [
-  ['D2', '2'],
-  ['D3', '3'],
-  ['D4', '4'],
-  ['D5', '5'],
-  ['D6', '6'],
-  ['D7', '7'],
-  ['D8', '8'],
-  ['D9', '9'],
+  ['D5', '2'],
+  ['D6', '3'],
+  ['D7', '4'],
+  ['D8', '5'],
+  ['D9', '6'],
+  ['D10', '7'],
+  ['D11', '8'],
+  ['D12', '9'],
 ];
 
 Blockly.Blocks['motion_servo'] = {

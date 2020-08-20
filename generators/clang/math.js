@@ -424,3 +424,38 @@ Blockly.Clang['math_atan2'] = function(block) {
   return ['Math.atan2(' + argument1 + ', ' + argument0 + ') / Math.PI * 180',
       Blockly.Clang.ORDER_DIVISION];
 };
+
+Blockly.Clang['matrix_symble_image'] = function(block) {
+  // Numeric value.
+  var order = Blockly.Clang.ORDER_NONE;
+  var code = Blockly.Clang.valueToCode(block ,'SYMBLE', order);
+  
+  return [code, order];
+};
+
+
+Blockly.Clang['matrix_symble'] = function(block) {
+  // Numeric value.
+  var code = Number(block.getFieldValue('SYMBLE'));
+  code = isNaN(code) ? Number(0) : code;
+  var order = code >= 0 ? Blockly.Clang.ORDER_ATOMIC :
+              Blockly.Clang.ORDER_UNARY_NEGATION;
+  return [code, order];
+};
+
+Blockly.Clang['matrix_emotion_image'] = function(block) {
+  // Numeric value.
+  var order = Blockly.Clang.ORDER_NONE;
+  var code = Blockly.Clang.valueToCode(block ,'EMOTION', order);
+  
+  return [code, order];
+};
+
+Blockly.Clang['matrix_emotion'] = function(block) {
+  // Numeric value.
+  var code = Number(block.getFieldValue('EMOTION'));
+  code = isNaN(code) ? Number(0) : code;
+  var order = code >= 0 ? Blockly.Clang.ORDER_ATOMIC :
+              Blockly.Clang.ORDER_UNARY_NEGATION;
+  return [code, order];
+};

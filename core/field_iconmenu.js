@@ -37,8 +37,16 @@ goog.require('Blockly.DropDownDiv');
  * @extends {Blockly.Field}
  * @constructor
  */
-Blockly.FieldIconMenu = function(icons) {
+Blockly.FieldIconMenu = function(icons, dropdown_width) {
   /** @type {object} */
+
+  if(!!dropdown_width){
+    this.dropdown_width = dropdown_width;
+  }
+  else{
+    this.dropdown_width = Blockly.FieldIconMenu.DROPDOWN_WIDTH;
+  }
+
   this.icons_ = icons;
   // Example:
   // [{src: '...', width: 20, height: 20, alt: '...', value: 'machine_value'}, ...]
@@ -57,7 +65,7 @@ goog.inherits(Blockly.FieldIconMenu, Blockly.Field);
  * @nocollapse
  */
 Blockly.FieldIconMenu.fromJson = function(element) {
-  return new Blockly.FieldIconMenu(element['options']);
+  return new Blockly.FieldIconMenu(element['options'], element['dropdown_width']);
 };
 
 /**
@@ -192,6 +200,7 @@ Blockly.FieldIconMenu.prototype.showEditor_ = function() {
   // Accessibility properties
   contentDiv.setAttribute('role', 'menu');
   contentDiv.setAttribute('aria-haspopup', 'true');
+
   for (var i = 0, icon; icon = this.icons_[i]; i++) {
     // Icons with the type property placeholder take up space but don't have any functionality
     // Use for special-case layouts
@@ -203,6 +212,7 @@ Blockly.FieldIconMenu.prototype.showEditor_ = function() {
       contentDiv.appendChild(placeholder);
       continue;
     }
+
     var button = document.createElement('button');
     button.setAttribute('id', ':' + i); // For aria-activedescendant
     button.setAttribute('role', 'menuitem');
@@ -245,7 +255,8 @@ Blockly.FieldIconMenu.prototype.showEditor_ = function() {
     button.appendChild(buttonImg);
     contentDiv.appendChild(button);
   }
-  contentDiv.style.width = Blockly.FieldIconMenu.DROPDOWN_WIDTH + 'px';
+
+  contentDiv.style.width = this.dropdown_width + 'px';
 
   Blockly.DropDownDiv.setColour(this.sourceBlock_.getColour(), this.sourceBlock_.getColourTertiary());
   Blockly.DropDownDiv.setCategory(this.sourceBlock_.parentBlock_.getCategory());

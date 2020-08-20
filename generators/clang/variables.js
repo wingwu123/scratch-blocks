@@ -46,8 +46,6 @@ Blockly.Clang['data_setvariableto'] = function(block) {
   var argument0 = Blockly.Clang.valueToCode(block, 'VALUE',
       Blockly.Clang.ORDER_ASSIGNMENT) || '0';
 
-  console.log('data_setvariableto', '['+ block.getFieldValue('VARIABLE') +']');
-
   var varName = block.getFieldValue('VARIABLE');
   var code = '';
 

@@ -169,8 +169,6 @@ Blockly.Clang.workspaceToCode = function(workspace) {
     workspace = Blockly.getMainWorkspace();
   }
 
-  console.log("Blockly.Clang.workspaceToCode");
-
   var code = [];
   this.init(workspace);
   var blocks = workspace.getTopBlocks(true);
@@ -423,5 +421,40 @@ Blockly.Clang.functionName = function(name) {
 
 Blockly.Clang.paramName = function(name) {
   return Blockly.Clang.identifier(name,'p_');
+}
+
+Blockly.Clang.matrixConvert = function(matrix) {
+  if(!matrix || typeof matrix != 'string')
+  {
+    matrix = '';
+  }
+  while(matrix.length < 64){
+    matrix += '0';
+  }
+
+  let rows = [];
+  let from = 0;
+  while(from < 64)
+  {
+    rows.push(matrix.substr(from, 8));
+    from += 8;
+  }
+
+  let rets = [];
+  let mask = 1;
+  let val = 0;
+
+  for (let index = 0; index < rows.length; index++) {
+    const row = rows[index];
+    val = 0;
+    mask = 1;
+    for (let col = row.length - 1; col >= 0; col--) {
+      val = val | (row[col] == '0' ? 0 : mask);
+      mask *= 2;
+    }
+    rets.push(val);
+  }
+  
+  return rets;
 }
 

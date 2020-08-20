@@ -153,8 +153,6 @@ Blockly.Clang['procedures_call'] = function(block) {
   // Generated code is for a function call as a statement is the same as a
   // function call as a value, with the addition of line ending.
 
-  console.log('argumentDefaults_ ', JSON.stringify(block.argumentDefaults_));
-
   var code = '';
   var procName = Blockly.Clang.functionName(block.procCode_.split(' ')[0]);
   var args = [];

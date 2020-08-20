@@ -63,6 +63,9 @@ Blockly.Clang['sensing_gas_pressure']
 Blockly.Clang['sensing_infrared_receiver'] 
   = Blockly.Clang.sensing.simple_port_func('infrared_receiver'); 
 
+Blockly.Clang['sensing_infrared'] 
+  = Blockly.Clang.sensing.simple_port_func('infrared_value'); 
+
 Blockly.Clang['sensing_potentiometer'] 
   = Blockly.Clang.sensing.simple_port_func('potentiometer'); 
 
@@ -72,6 +75,16 @@ Blockly.Clang['sensing_bluetooth_receiver'] = function(block) {
   var code;
   
   code = 'bluetooth_receiver()';
+  return [code, Blockly.Clang.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Clang['sensing_bluetooth_stick'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_NONE;
+  var key = block.getFieldValue('KEY');
+  var code;
+  
+  code = 'bluetooth_stick(' + key + ')';
   return [code, Blockly.Clang.ORDER_FUNCTION_CALL];
 };
 
@@ -86,14 +99,25 @@ Blockly.Clang['sensing_jointed_arm'] = function(block) {
   return [code, Blockly.Clang.ORDER_FUNCTION_CALL];
 };
 
+
 Blockly.Clang['sensing_touch_button'] = function(block) {
+
+  var order = Blockly.Clang.ORDER_NONE;
+  var port = block.getFieldValue('PORT');
+  var code;
+
+  code = 'touch_button( ' + port + ' )';
+  return [code, Blockly.Clang.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Clang['sensing_key_button'] = function(block) {
 
   var order = Blockly.Clang.ORDER_NONE;
   var port = block.getFieldValue('PORT');
   var key = block.getFieldValue('KEY');
   var code;
 
-  code = 'touch_button( ' + port + ', ' + key + ' )';
+  code = 'key_button( ' + port + ', ' + key + ' )';
   return [code, Blockly.Clang.ORDER_FUNCTION_CALL];
 };
 

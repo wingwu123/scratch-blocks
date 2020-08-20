@@ -122,8 +122,6 @@ Blockly.Clang['control_wait_until'] = function(block) {
 
 Blockly.Clang['control_repeat_until'] = function(block) {
 
-  console.log(' Clang control_repeat_until');
-
   var code = '', branchCode, conditionCode;
 
   conditionCode = Blockly.Clang.valueToCode(block, 'CONDITION',

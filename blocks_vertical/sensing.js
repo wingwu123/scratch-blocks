@@ -539,6 +539,8 @@ Blockly.Blocks['sensing_userid'] = {
 };
 
 //dev-sensing
+
+
 Blockly.Blocks.sensing.PORT_MENU_OPEION = [
   ['1', '1'],
   ['2', '2'],
@@ -547,6 +549,28 @@ Blockly.Blocks.sensing.PORT_MENU_OPEION = [
   ['5', '5'],
   ['6', '6']
 ];
+
+Blockly.Blocks['sensing_touch_button'] = {
+  /**
+   * Block touch button.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_TOUCH_BUTTON,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_boolean"]
+    });
+  }
+};
+
 
 Blockly.Blocks.sensing.LINE_MENU_OPEION = [
   ['黑线', '1'],
@@ -755,6 +779,28 @@ Blockly.Blocks['sensing_gas_pressure'] = {
 };
 
 
+Blockly.Blocks['sensing_infrared'] = {
+  /**
+   * Block infrared.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_INFRARED,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+
 Blockly.Blocks['sensing_infrared_receiver'] = {
   /**
    * Block infrared receiver.
@@ -813,6 +859,34 @@ Blockly.Blocks['sensing_bluetooth_receiver'] = {
   }
 };
 
+Blockly.Blocks.sensing.STICK_KEY_MENU_OPEION = [
+  ['LX', '1'],
+  ['LY', '2'],
+  ['RX', '3'],
+  ['RY', '4']
+];
+
+Blockly.Blocks['sensing_bluetooth_stick'] = {
+  /**
+   * Block bluetooth stick.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_BLUETOOTH_STICK,
+      "category": Blockly.Categories.sensing,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "KEY",
+          "options": Blockly.Blocks.sensing.STICK_KEY_MENU_OPEION
+        }
+      ],
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
 
 Blockly.Blocks.sensing.AXIS_MENU_OPEION = [
   ['X轴', '1'],
@@ -854,14 +928,14 @@ Blockly.Blocks.sensing.KEY_MENU_OPEION = [
   ['4', '4']
 ];
 
-Blockly.Blocks['sensing_touch_button'] = {
+Blockly.Blocks['sensing_key_button'] = {
   /**
    * Block touch button.
    * @this Blockly.Block
    */
   init: function() {
     this.jsonInit({
-      "message0": Blockly.Msg.SENSING_TOUCH_BUTTON,
+      "message0": Blockly.Msg.SENSING_KEY_BUTTON,
       "args0": [
         {
           "type": "field_dropdown",

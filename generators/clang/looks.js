@@ -18,7 +18,7 @@ goog.require('Blockly.Clang');
 Blockly.Clang['looks_set_emotion'] = function(block) {
 
   var code = '';
-  var emotionId = block.getFieldValue('EMOTION_ID');
+  var emotionId = Blockly.Clang.valueToCode(block, 'EMOTION_ID', Blockly.Clang.ORDER_NONE) || '1';
   var Lport = block.getFieldValue('LEFT_PORT');
   var Rport = block.getFieldValue('RIGHT_PORT');
 
@@ -42,10 +42,24 @@ Blockly.Clang['looks_off_emotion'] = function(block) {
 Blockly.Clang['looks_set_symbol'] = function(block) {
 
   var code = '';
-  var symbolId = block.getFieldValue('SYMBOL');
+  var symbolId = Blockly.Clang.valueToCode(block, 'SYMBOL', Blockly.Clang.ORDER_NONE) || '1';
   var port = block.getFieldValue('PORT');
 
   code = 'set_symbol(' + symbolId + ', ' + port + ');';
+
+  return code + '\n';
+};
+
+Blockly.Clang['looks_custom_led_matrix'] = function(block) {
+
+  var code = '';
+  var matrix = block.getFieldValue('MATRIX');
+
+  matrix = Blockly.Clang.matrixConvert(matrix);
+
+  var port = block.getFieldValue('PORT');
+
+  code = 'set_symbol_cust((LedMaritx){{' + matrix.join(',') + '}}, ' + port + ');';
 
   return code + '\n';
 };

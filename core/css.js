@@ -979,6 +979,23 @@ Blockly.Css.CONTENT = [
     'box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.15);',
   '}',
 
+  '.blocklyDropDownContent::-webkit-scrollbar {',
+      'width: 6px;',     /*高宽分别对应横竖滚动条的尺寸*/
+      'height: 1px;',
+      'background: rgba(200,200,200, 0.0);',
+  '}',
+
+  '.blocklyDropDownContent::-webkit-scrollbar-thumb {', /*滚动条里面小方块*/
+    'border-radius: 6px;',
+    'background-color: rgba(200,200,200, 0.3);',
+  '}',
+
+  '.blocklyDropDownContent::-webkit-scrollbar-track {',/*滚动条里面轨道*/
+    /*'-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);',*/
+    /*border-radius: 10px;*/
+    'background: rgba(200,200,200, 0.0);',
+  '}',
+
   '.scratchEyedropper {',
     'background: none;',
     'outline: none;',

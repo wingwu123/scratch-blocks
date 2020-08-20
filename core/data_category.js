@@ -61,8 +61,6 @@ Blockly.DataCategory = function(workspace) {
     Blockly.DataCategory.addHideVariable(xmlList, firstVariable);
   }
 
-  console.log("DataCategory setlistVarVisible ", workspace.listVarVisible);
-
   if(!workspace.listVarVisible)
   {
     return xmlList;
