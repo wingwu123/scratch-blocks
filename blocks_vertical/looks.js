@@ -889,3 +889,87 @@ Blockly.Blocks['looks_off_led_light'] = {
     });
   }
 };
+
+Blockly.Blocks.looks.LED_ID_MENU_OPEION = [
+  ['全部', '0'],
+  ['1', '1'],
+  ['2', '2'],
+  ['3', '3'],
+  ['4', '4']
+];
+
+Blockly.Blocks['looks_integrated_led'] = {
+  /**
+   * Block off led light.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_INTEGRATED_LED,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        },
+        {
+          "type": "field_dropdown",
+          "name": "LED_ID",
+          "options": Blockly.Blocks.looks.LED_ID_MENU_OPEION
+        },
+        {
+          "type": "input_value",
+          "name": "R"
+        },
+        {
+          "type": "input_value",
+          "name": "G"
+        },
+        {
+          "type": "input_value",
+          "name": "B"
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+
+Blockly.Blocks['looks_led_strip'] = {
+  /**
+   * Block off led .
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_LED_STRIP,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "PORT",
+          "options": Blockly.Blocks.looks.EMOTION_PORT_MENU_OPEION
+        },
+        {
+          "type": "input_value",
+          "name": "LED_ID"
+        },
+        {
+          "type": "input_value",
+          "name": "R"
+        },
+        {
+          "type": "input_value",
+          "name": "G"
+        },
+        {
+          "type": "input_value",
+          "name": "B"
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};

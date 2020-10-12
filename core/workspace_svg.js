@@ -1574,6 +1574,7 @@ Blockly.WorkspaceSvg.prototype.updateToolbox = function(tree) {
     throw 'Existing toolbox is null.  Can\'t create new toolbox.';
   }
   if (tree.getElementsByTagName('category').length) {
+
     if (!this.toolbox_) {
       throw 'Existing toolbox has no categories.  Can\'t change mode.';
     }
@@ -1581,6 +1582,7 @@ Blockly.WorkspaceSvg.prototype.updateToolbox = function(tree) {
     this.toolbox_.populate_(tree);
     this.toolbox_.position();
   } else {
+
     if (!this.flyout_) {
       throw 'Existing toolbox has categories.  Can\'t change mode.';
     }

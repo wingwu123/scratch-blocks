@@ -345,3 +345,19 @@ Blockly.Blocks['event_when_wobot_started'] = {
   }
 
 };
+
+
+Blockly.Blocks['event_when_wobot_loop'] = {
+  /**
+   * 
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.EVENT_WOBOT_LOOP,
+      "category": Blockly.Categories.event,
+      "extensions": ["colours_event", "shape_hat"]
+    });
+  }
+
+};

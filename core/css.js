@@ -461,7 +461,7 @@ Blockly.Css.CONTENT = [
   '.blocklyText {',
     'fill: #fff;',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    'font-size: 16pt;', //12pt
     'font-weight: 500;',
   '}',
 
@@ -529,7 +529,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyFlyoutLabelText {',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 14pt;',
+    'font-size: 18pt;', //14pt
     'fill: #575E75;',
     'font-weight: bold;',
   '}',
@@ -682,7 +682,7 @@ Blockly.Css.CONTENT = [
 
   '.scratchCommentText {',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    'font-size: 16pt;', //12pt
     'font-weight: 400;',
   '}',
 
@@ -713,7 +713,7 @@ Blockly.Css.CONTENT = [
   '.blocklyHtmlInput {',
     'border: none;',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    'font-size: 16pt;', //12pt
     'height: 100%;',
     'margin: 0;',
     'outline: none;',

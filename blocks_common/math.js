@@ -315,6 +315,34 @@ Blockly.Blocks['math_decimal_1_30'] = {
 };
 
 
+Blockly.Blocks['math_decimal_1_60'] = {
+  /**
+   * Block for whole number value, no negatives or decimals.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_decimal",
+          "name": "NUM",
+          "validators":[
+            {"type":"minmax", "min": 1, "max": 60},
+            {"type":"regexp", "pattern": /^([0-9]{0,6})$/}
+          ]
+        }
+      ],
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "colour": Blockly.Colours.textField,
+      "colourSecondary": Blockly.Colours.textField,
+      "colourTertiary": Blockly.Colours.textField
+    });
+  }
+};
+
+
 Blockly.Blocks['math_decimal_0_180'] = {
   /**
    * Block for whole number value, no negatives or decimals.

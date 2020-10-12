@@ -4086,6 +4086,7 @@ Blockly.ScratchMsgs.locales["en"] =
     "EVENT_WHENKEYPRESSED_ANY": "any",
 
     "EVENT_WHEN_WOBOT_STARTED": "when WOBOT started",
+    "EVENT_WOBOT_LOOP": "when WOBOT loop",
 
     "LOOKS_SAYFORSECS": "say %1 for %2 seconds",
     "LOOKS_SAY": "say %1",
@@ -4331,6 +4332,8 @@ Blockly.ScratchMsgs.locales["en"] =
     "LOOKS_SET_LED_LIGHT_RGB": "Set LED light port %1 R %2 G %3 B %4",
     "LOOKS_SET_LED_LIGHT_COLOR": "Set LED light port %1 color %2",
     "LOOKS_OFF_LED_LIGHT": "Off LED light port %1",
+    "LOOKS_INTEGRATED_LED": "Set Integrated LED port %1 ID %2 R %3 G %4 B %5",
+    "LOOKS_LED_STRIP": "Set LED strip port %1 ID %2 R %3 G %4 B %5",
 
     "SENSING_GRAY_DETECTED_LINE": "Single gray port %1 detected %2",
     "SENSING_GRAY_VALUE": "Single gray port %1 value",
@@ -17905,6 +17908,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "EVENT_WHENKEYPRESSED_ANY": "任意",
 
     "EVENT_WHEN_WOBOT_STARTED": "当 WOBOT 启动",
+    "EVENT_WOBOT_LOOP": "WOBOT loop 事件",
 
     "LOOKS_SAYFORSECS": "说 %1 %2 秒",
     "LOOKS_SAY": "说 %1",
@@ -18150,6 +18154,9 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "LOOKS_SET_LED_LIGHT_RGB": "设置LED灯 端口 %1 R %2 G %3 B %4",
     "LOOKS_SET_LED_LIGHT_COLOR": "设置LED灯 端口 %1 颜色 %2",
     "LOOKS_OFF_LED_LIGHT": "关闭LED灯 端口 %1",
+    "LOOKS_INTEGRATED_LED": "设置集成LED 端口 %1 灯珠编号 %2 R %3 G %4 B %5",
+    "LOOKS_LED_STRIP": "设置LED灯带 端口 %1 灯珠编号 %2 R %3 G %4 B %5",
+
     "SENSING_GRAY_DETECTED_LINE": "单灰度 端口 %1 检测到 %2",
     "SENSING_GRAY_VALUE": "单灰度 端口 %1 探测值",
     "SENSING_FLAME_VALUE": "火焰传感器 端口 %1 值",
@@ -18165,7 +18172,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "SENSING_BLUETOOTH_RECEIVER": "蓝牙接收器值",
     "SENSING_BLUETOOTH_STICK": "蓝牙遥杆 按键 %1 值",
     
-    "SENSING_JOINTED_ARM": "遥杆传感器 端口 %1 轴 %2 值",
+    "SENSING_JOINTED_ARM": "摇杆传感器 端口 %1 轴 %2 值",
     "SENSING_TOUCH_BUTTON": "触摸开关 端口 %1 被按下",
     "SENSING_KEY_BUTTON": "按键开关 端口 %1 按键 %2 被按下",
     "SENSING_GYROSCOPE": "陀螺仪传感器 端口 %1 轴 %2 角度",
@@ -18235,6 +18242,7 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "EVENT_WHENKEYPRESSED_ANY": "任何",
 
     "EVENT_WHEN_WOBOT_STARTED": "當 WOBOT 启动",
+    "EVENT_WOBOT_LOOP": "WOBOT loop 事件",
 
     "LOOKS_SAYFORSECS": "說出 %1 持續 %2 秒",
     "LOOKS_SAY": "說出 %1",
@@ -18480,6 +18488,9 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "LOOKS_SET_LED_LIGHT_RGB": "设置LED灯 端口 %1 R %2 G %3 B %4",
     "LOOKS_SET_LED_LIGHT_COLOR": "设置LED灯 端口 %1 颜色 %2",
     "LOOKS_OFF_LED_LIGHT": "关闭LED灯 端口 %1",
+    "LOOKS_INTEGRATED_LED": "设置集成LED 端口 %1 灯珠编号 %2 R %3 G %4 B %5",
+    "LOOKS_LED_STRIP": "设置LED灯带 端口 %1 灯珠编号 %2 R %3 G %4 B %5",
+    
     "SENSING_GRAY_DETECTED_LINE": "单灰度 端口 %1 检测到 %2",
     "SENSING_GRAY_VALUE": "单灰度 端口 %1 探测值",
     "SENSING_FLAME_VALUE": "火焰传感器 端口 %1 值",
@@ -18494,7 +18505,7 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "SENSING_POTENTIOMETER": "电位器 端口 %1 值",
     "SENSING_BLUETOOTH_RECEIVER": "蓝牙接收器值",
     "SENSING_BLUETOOTH_STICK": "蓝牙遥杆 按键 %1 值",
-    "SENSING_JOINTED_ARM": "遥杆传感器 端口 %1 轴 %2 值",
+    "SENSING_JOINTED_ARM": "摇杆传感器 端口 %1 轴 %2 值",
     "SENSING_TOUCH_BUTTON": "触摸开关 端口 %1 被按下",
     "SENSING_KEY_BUTTON": "按键开关 端口 %1 按键 %2 被按下",
     "SENSING_GYROSCOPE": "陀螺仪传感器 端口 %1 轴 %2 角度",

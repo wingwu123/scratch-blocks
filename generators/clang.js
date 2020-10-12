@@ -135,6 +135,10 @@ Blockly.Clang.init = function(workspace) {
 
   Blockly.Clang.variableDB_.setVariableMap(workspace.getVariableMap());
 
+  Blockly.Clang.loopEvent = [];
+
+  Blockly.Clang.buildinLoop = Object.create(null);
+
   var defvars = [];
   // Add developer variables (not created or named by the user).
   var devVarList = Blockly.Variables.allDeveloperVariables(workspace);
@@ -180,7 +184,15 @@ Blockly.Clang.workspaceToCode = function(workspace) {
     return b.type == 'event_when_wobot_started';
   });
 
+  var loopBlocks = blocks.filter((b) => {
+    return b.type == 'event_when_wobot_loop';
+  });
+
   for (var x = 0, block; block = procedures[x]; x++) {
+    this.blockToCode(block, true);
+  }
+
+  for (var x = 0, block; block = loopBlocks[x]; x++) {
     this.blockToCode(block, true);
   }
 
@@ -236,9 +248,42 @@ Blockly.Clang.finish = function(code) {
                       '  board_init();',
                       '}'];
 
+  let loop = Blockly.Clang.loopCode();
+
   return includes.join('\n') + '\n\n' + defaultFunc.join('\n') 
-  + '\n\n' + definitions.join('\n\n') + '\n\n\n' + code;
+  + '\n\n' + definitions.join('\n\n') 
+  + '\n\n\n' + code + '\n\n\n' + loop;
 };
+
+Blockly.Clang.loopCode = function() {
+  let code = [];
+
+
+  for (const key in Blockly.Clang.buildinLoop) {
+    //if (Blockly.Clang.buildinLoop.hasOwnProperty(key)) {
+      code.push(key);
+    //}
+  }
+
+  code.push('\n');
+
+  for (let index = 0; index < Blockly.Clang.loopEvent.length; index++) {
+    const evt = Blockly.Clang.loopEvent[index];
+
+    if(typeof evt == 'string'){
+      code.push(evt);
+    }
+    else{
+      code = code.concat(evt);
+    }
+  }
+
+  code =  Blockly.Clang.prefixLines(code.join('\n') , Blockly.Clang.INDENT);
+
+  code = 'void _loop(){\n' + code + '\n}';
+
+  return code;
+}
 
 /**
  * Naked values are top-level blocks with outputs that aren't plugged into

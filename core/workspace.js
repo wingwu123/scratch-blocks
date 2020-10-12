@@ -306,7 +306,9 @@ Blockly.Workspace.prototype.clear = function() {
   if (!existingGroup) {
     Blockly.Events.setGroup(false);
   }
+
   this.variableMap_.clear();
+
   // Any block with a drop-down or WidgetDiv was disposed.
   if (Blockly.DropDownDiv) {
     Blockly.DropDownDiv.hideWithoutAnimation();

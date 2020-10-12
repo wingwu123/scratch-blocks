@@ -140,3 +140,45 @@ Blockly.Clang['looks_off_led_light'] = function(block) {
 };
 
 
+Blockly.Clang['looks_integrated_led'] = function(block) {
+
+  var code = '';
+  var port = block.getFieldValue('PORT');
+
+  var Id = block.getFieldValue('LED_ID');
+
+  var r = Blockly.Clang.valueToCode(block, 'R',
+  Blockly.Clang.ORDER_NONE) || '0';
+  var g = Blockly.Clang.valueToCode(block, 'G',
+  Blockly.Clang.ORDER_NONE) || '0';
+  var b = Blockly.Clang.valueToCode(block, 'B',
+  Blockly.Clang.ORDER_NONE) || '0';
+
+  code = 'set_rgb_led_module(' + port + ', ' + Id + ', ' + r + ', ' + g + ', ' + b  + ');';
+
+  return code + '\n';
+};
+
+
+Blockly.Clang['looks_led_strip'] = function(block) {
+
+  var code = '';
+  var port = block.getFieldValue('PORT');
+
+  var Id = Blockly.Clang.valueToCode(block, 'LED_ID',
+  Blockly.Clang.ORDER_NONE) || '1';
+
+  var r = Blockly.Clang.valueToCode(block, 'R',
+  Blockly.Clang.ORDER_NONE) || '0';
+  var g = Blockly.Clang.valueToCode(block, 'G',
+  Blockly.Clang.ORDER_NONE) || '0';
+  var b = Blockly.Clang.valueToCode(block, 'B',
+  Blockly.Clang.ORDER_NONE) || '0';
+
+  code = 'set_rgb_led_strip(' + port + ', ' + Id + ', ' + r + ', ' + g + ', ' + b  + ');';
+
+  return code + '\n';
+};
+
+
+

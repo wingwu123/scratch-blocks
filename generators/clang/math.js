@@ -35,6 +35,7 @@ Blockly.Clang['math_decimal_m100_p100'] = Blockly.Clang['math_number'];
 Blockly.Clang['math_decimal_0_100'] = Blockly.Clang['math_number'];
 Blockly.Clang['math_decimal_m150_p150'] = Blockly.Clang['math_number'];
 Blockly.Clang['math_decimal_1_30'] = Blockly.Clang['math_number'];
+Blockly.Clang['math_decimal_1_60'] = Blockly.Clang['math_number'];
 Blockly.Clang['math_decimal_0_180'] = Blockly.Clang['math_number'];
 Blockly.Clang['math_decimal_0_1k'] = Blockly.Clang['math_number'];
 Blockly.Clang['math_decimal_0_255'] = Blockly.Clang['math_number'];

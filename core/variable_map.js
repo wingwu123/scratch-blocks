@@ -413,3 +413,11 @@ Blockly.VariableMap.prototype.getVariableUsesById = function(id) {
   }
   return uses;
 };
+
+Blockly.VariableMap.prototype.toString = function() {
+  var all_variables = this.getAllVariables();
+  var text = '';
+  text =  "[" + all_variables.map((item, index) =>{return item['name'] + ' ' + index}).join(", ") + "]";
+  
+  return text;
+};

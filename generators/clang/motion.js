@@ -97,6 +97,12 @@ Blockly.Clang['motion_step_motor'] = function(block) {
 
   code = 'set_step_motor(' + port + ', ' + power + ', ' + steps  + ');';
 
+  var loop_code = 'step_motor_loop(' + port + ');';
+
+  Blockly.Clang.buildinLoop[loop_code] = 0;
+
+  console.log("motion_step_motor ", loop_code);
+
   return code + '\n';
 };
 

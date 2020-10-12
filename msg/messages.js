@@ -99,6 +99,7 @@ Blockly.Msg.EVENT_WHENKEYPRESSED_ANY = 'any';
 //dev-event
 
 Blockly.Msg.EVENT_WHEN_WOBOT_STARTED = 'when WOBOT started';
+Blockly.Msg.EVENT_WOBOT_LOOP = 'when WOBOT loop';
 
 // Looks blocks
 Blockly.Msg.LOOKS_SAYFORSECS = 'say %1 for %2 seconds';
@@ -155,6 +156,8 @@ Blockly.Msg.LOOKS_CLEAR_DIGITAL_TUBE = 'Clear digital tube port %1';
 Blockly.Msg.LOOKS_SET_LED_LIGHT_RGB = 'Set LED light port %1 R %2 G %3 B %4';
 Blockly.Msg.LOOKS_SET_LED_LIGHT_COLOR = 'Set LED light port %1 color %2';
 Blockly.Msg.LOOKS_OFF_LED_LIGHT = 'Off LED light port %1';
+Blockly.Msg.LOOKS_INTEGRATED_LED = 'Set Integrated LED port %1 ID %2 R %3 G %4 B %5';
+Blockly.Msg.LOOKS_LED_STRIP = 'Set LED strip port %1 ID %2 R %3 G %4 B %5';
 
 // Motion blocks
 Blockly.Msg.MOTION_MOVESTEPS = 'move %1 steps';
