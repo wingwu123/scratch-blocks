@@ -158,6 +158,19 @@ Blockly.Msg.LOOKS_SET_LED_LIGHT_COLOR = 'Set LED light port %1 color %2';
 Blockly.Msg.LOOKS_OFF_LED_LIGHT = 'Off LED light port %1';
 Blockly.Msg.LOOKS_INTEGRATED_LED = 'Set Integrated LED port %1 ID %2 R %3 G %4 B %5';
 Blockly.Msg.LOOKS_LED_STRIP = 'Set LED strip port %1 ID %2 R %3 G %4 B %5';
+Blockly.Msg.LOOKS_BEEP = 'Set buzzer pitch %1 length %2';
+
+
+Blockly.Msg.LOOKS_LED_COLOR_WHITE   = 'white';
+Blockly.Msg.LOOKS_LED_COLOR_YELLOW  = 'yellow';
+Blockly.Msg.LOOKS_LED_COLOR_PURPLE  = 'purple';
+Blockly.Msg.LOOKS_LED_COLOR_CYAN    = 'cyan';
+Blockly.Msg.LOOKS_LED_COLOR_RED     = 'red';
+Blockly.Msg.LOOKS_LED_COLOR_GREEN   = 'green';
+Blockly.Msg.LOOKS_LED_COLOR_BLUE    = 'blue';
+Blockly.Msg.LOOKS_LED_COLOR_BLACK   = 'black';
+
+Blockly.Msg.LOOKS_INTEGRATED_LED_ID_ALL = 'all';
 
 // Motion blocks
 Blockly.Msg.MOTION_MOVESTEPS = 'move %1 steps';
@@ -204,10 +217,17 @@ Blockly.Msg.MOTION_ENCODER_MOTOR = 'Set encoder motor ID %1 port %2 power %3';
 Blockly.Msg.MOTION_DC_MOTOR = 'Set DC motor ID %1 port %2 power %3';
 Blockly.Msg.MOTION_SMART_SERVO_ANGLE = 'Set smart servo ID %1 speed %2 angle %3';
 Blockly.Msg.MOTION_SMART_SERVO = 'Set smart servo ID %1 speed %2';
-Blockly.Msg.MOTION_SERVO = 'Set servo ID %1 port %2 power %3';
+Blockly.Msg.MOTION_SERVO = 'Set servo ID %1 speed %2 power %3';
 Blockly.Msg.MOTION_STEP_MOTOR = 'Set step motor port %1 power %2 steps %3';
 Blockly.Msg.MOTION_SET_ELECTROMAGNET = 'Set electromagnet port %1 status %2';
 Blockly.Msg.MOTION_DIGITAL_OUTPUT = 'Set digital output port %1 status %2';
+
+Blockly.Msg.MOTION_ELECTRONMAGNET_ADSORBED = 'adsorbed';
+Blockly.Msg.MOTION_ELECTRONMAGNET_BREAK_OFF = 'break off';
+
+Blockly.Msg.MOTION_DIGITAL_OUTPUT_CONNECTED = 'connected';
+Blockly.Msg.MOTION_DIGITAL_OUTPUT_BREAK_OFF = 'break off';
+
 
 // Operators blocks
 Blockly.Msg.OPERATORS_ADD = '%1 + %2';
@@ -309,7 +329,7 @@ Blockly.Msg.SENSING_INFRARED_RECEIVER = 'Infrared receiver port %1 value';
 Blockly.Msg.SENSING_INFRARED = 'Infrared port %1 value';
 Blockly.Msg.SENSING_POTENTIOMETER = 'Potentiometer port %1 value';
 Blockly.Msg.SENSING_BLUETOOTH_RECEIVER = 'Bluetooth receiver value';
-Blockly.Msg.SENSING_BLUETOOTH_STICK = 'Bluetooth stick %1 value';
+Blockly.Msg.SENSING_BLUETOOTH_HANDLE = 'Bluetooth handle %1 value';
 Blockly.Msg.SENSING_JOINTED_ARM = 'Jointed arm port %1 axis %2 value';
 Blockly.Msg.SENSING_TOUCH_BUTTON = 'Touch button port %1 touched';
 Blockly.Msg.SENSING_KEY_BUTTON = 'Key button port %1 key %2 pressed';
@@ -317,6 +337,12 @@ Blockly.Msg.SENSING_GYROSCOPE = 'Gyroscope sensor port %1 axis %2 angle value';
 Blockly.Msg.SENSING_LIMIT_SWITCH = 'Limit switch port %1 pressed';
 Blockly.Msg.SENSING_WATER_TEMPERATURE = 'Water temperature sensor port %1 value';
 Blockly.Msg.SENSING_ANALOG_INPUT = 'Analog input port %1 value';
+
+Blockly.Msg.SENSING_GRAY_DETECTED_LINE_BLACK = 'black';
+Blockly.Msg.SENSING_GRAY_DETECTED_LINE_WHITE = 'white';
+
+Blockly.Msg.SENSING_JOINTED_ARM_AXIS_X = 'X-axis';
+Blockly.Msg.SENSING_JOINTED_ARM_AXIS_Y = 'Y-axis';
 
 // Sound blocks
 Blockly.Msg.SOUND_PLAY = 'start sound %1';

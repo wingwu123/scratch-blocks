@@ -550,6 +550,13 @@ Blockly.Blocks.sensing.PORT_MENU_OPEION = [
   ['6', '6']
 ];
 
+Blockly.Blocks.sensing.IIC_PORT_MENU_OPEION = [
+  ['1', '1'],
+  ['2', '2'],
+  ['3', '3'],
+  ['4', '4']
+];
+
 Blockly.Blocks['sensing_touch_button'] = {
   /**
    * Block touch button.
@@ -572,10 +579,12 @@ Blockly.Blocks['sensing_touch_button'] = {
 };
 
 
-Blockly.Blocks.sensing.LINE_MENU_OPEION = [
-  ['黑线', '1'],
-  ['白线', '2']
-];
+Blockly.Blocks.sensing.LINE_MENU_OPEION = function(){
+  return [
+    [Blockly.Msg.SENSING_GRAY_DETECTED_LINE_BLACK /*'黑线'*/, '1'],
+    [Blockly.Msg.SENSING_GRAY_DETECTED_LINE_WHITE /*'白线'*/, '2']
+  ];
+}; 
 
 Blockly.Blocks['sensing_gray_detected_line'] = {
   /**
@@ -594,7 +603,7 @@ Blockly.Blocks['sensing_gray_detected_line'] = {
         {
           "type": "field_dropdown",
           "name": "LINE",
-          "options": Blockly.Blocks.sensing.LINE_MENU_OPEION
+          "options": Blockly.Blocks.sensing.LINE_MENU_OPEION()
         }
       ],
       "category": Blockly.Categories.sensing,
@@ -661,7 +670,7 @@ Blockly.Blocks['sensing_temperature_value'] = {
         {
           "type": "field_dropdown",
           "name": "PORT",
-          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+          "options": Blockly.Blocks.sensing.IIC_PORT_MENU_OPEION
         }
       ],
       "category": Blockly.Categories.sensing,
@@ -682,7 +691,7 @@ Blockly.Blocks['sensing_humidity_value'] = {
         {
           "type": "field_dropdown",
           "name": "PORT",
-          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+          "options": Blockly.Blocks.sensing.IIC_PORT_MENU_OPEION
         }
       ],
       "category": Blockly.Categories.sensing,
@@ -747,7 +756,7 @@ Blockly.Blocks['sensing_ultrasonic_detection_distance'] = {
         {
           "type": "field_dropdown",
           "name": "PORT",
-          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+          "options": Blockly.Blocks.sensing.IIC_PORT_MENU_OPEION
         }
       ],
       "category": Blockly.Categories.sensing,
@@ -813,7 +822,7 @@ Blockly.Blocks['sensing_infrared_receiver'] = {
         {
           "type": "field_dropdown",
           "name": "PORT",
-          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+          "options": Blockly.Blocks.sensing.IIC_PORT_MENU_OPEION
         }
       ],
       "category": Blockly.Categories.sensing,
@@ -873,7 +882,7 @@ Blockly.Blocks['sensing_bluetooth_stick'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": Blockly.Msg.SENSING_BLUETOOTH_STICK,
+      "message0": Blockly.Msg.SENSING_BLUETOOTH_HANDLE,
       "category": Blockly.Categories.sensing,
       "args0": [
         {
@@ -888,10 +897,12 @@ Blockly.Blocks['sensing_bluetooth_stick'] = {
 };
 
 
-Blockly.Blocks.sensing.AXIS_MENU_OPEION = [
-  ['X轴', '1'],
-  ['Y轴', '2']
-];
+Blockly.Blocks.sensing.AXIS_MENU_OPEION = function() {
+  return  [
+    [Blockly.Msg.SENSING_JOINTED_ARM_AXIS_X/*'X轴'*/, '1'],
+    [Blockly.Msg.SENSING_JOINTED_ARM_AXIS_Y/*'Y轴'*/, '2']
+  ];
+};
 
 Blockly.Blocks['sensing_jointed_arm'] = {
   /**
@@ -905,12 +916,12 @@ Blockly.Blocks['sensing_jointed_arm'] = {
         {
           "type": "field_dropdown",
           "name": "PORT",
-          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+          "options": Blockly.Blocks.sensing.IIC_PORT_MENU_OPEION
         },
         {
           "type": "field_dropdown",
           "name": "AXIS",
-          "options": Blockly.Blocks.sensing.AXIS_MENU_OPEION
+          "options": Blockly.Blocks.sensing.AXIS_MENU_OPEION()
         }
       ],
       "category": Blockly.Categories.sensing,
@@ -974,7 +985,7 @@ Blockly.Blocks['sensing_gyroscope'] = {
         {
           "type": "field_dropdown",
           "name": "PORT",
-          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+          "options": Blockly.Blocks.sensing.IIC_PORT_MENU_OPEION
         },
         {
           "type": "field_dropdown",
@@ -1022,7 +1033,7 @@ Blockly.Blocks['sensing_water_temperature'] = {
         {
           "type": "field_dropdown",
           "name": "PORT",
-          "options": Blockly.Blocks.sensing.PORT_MENU_OPEION
+          "options": Blockly.Blocks.sensing.IIC_PORT_MENU_OPEION
         }
       ],
       "category": Blockly.Categories.sensing,

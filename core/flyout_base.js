@@ -274,6 +274,15 @@ Blockly.Flyout.prototype.scrollAnimationFraction = 0.3;
  */
 Blockly.Flyout.prototype.recyclingEnabled_ = true;
 
+  /**
+   *  悬浮 
+   * @type {?boolean}
+   * @package
+   */
+Blockly.Flyout.prototype.isFloat_ = false;
+
+Blockly.Flyout.prototype.pos = {x:0,y:0};
+
 /**
  * Creates the flyout's DOM.  Only needs to be called once. The flyout can
  * either exist as its own svg element or be a g element nested inside a
@@ -293,8 +302,13 @@ Blockly.Flyout.prototype.createDom = function(tagName) {
   // hide/show code will set up proper visibility and size later.
   this.svgGroup_ = Blockly.utils.createSvgElement(tagName,
       {'class': 'blocklyFlyout', 'style': 'display: none'}, null);
+
   this.svgBackground_ = Blockly.utils.createSvgElement('path',
-      {'class': 'blocklyFlyoutBackground'}, this.svgGroup_);
+        {'class': 'blocklyFlyoutBackground'}, this.svgGroup_);
+
+  this.svgBackgroundLine_ = Blockly.utils.createSvgElement('line',
+      {'class': 'blocklyFlyoutBackgroundLine', 'style': 'stroke:rgb(200,200,200);stroke-width:2'}, this.svgGroup_);
+
   this.svgGroup_.appendChild(this.workspace_.createDom());
   return this.svgGroup_;
 };
@@ -320,6 +334,26 @@ Blockly.Flyout.prototype.init = function(targetWorkspace) {
       Blockly.bindEventWithChecks_(
           this.svgGroup_, 'mousedown', this, this.onMouseDown_));
 
+  this.svgGroup_.addEventListener('mouseover', (e) => {
+
+    this.setBlockFloat();
+  });
+  
+  this.svgGroup_.addEventListener('mouseleave', (e) => {
+
+    this.unsetBlockFloat();
+  });
+  
+  this.svgGroup_.addEventListener('mousemove', (e) => {
+
+    if( this.isFloat_ ) {
+      if(e.clientX  > (this.width_ + this.pos.x) || e.clientX < this.pos.x) {
+        this.unsetBlockFloat();
+      }
+    }
+
+  });
+  
   // A flyout connected to a workspace doesn't have its own current gesture.
   this.workspace_.getGesture =
       this.targetWorkspace_.getGesture.bind(this.targetWorkspace_);
@@ -352,6 +386,7 @@ Blockly.Flyout.prototype.dispose = function() {
   }
   this.parentToolbox_ = null;
   this.svgBackground_ = null;
+  this.svgBackgroundLine_ = null;
   this.targetWorkspace_ = null;
 };
 
@@ -921,3 +956,31 @@ Blockly.Flyout.prototype.recycleBlock_ = function(block) {
   block.moveBy(-xy.x, -xy.y);
   this.recycleBlocks_.push(block);
 };
+
+Blockly.Flyout.prototype.setClipPathEnabled = function(enabled) {
+    
+};
+
+Blockly.Flyout.prototype.setBlockFloat = function() {
+
+  this.isFloat_ = true;
+
+  this.svgGroup_.setAttribute("width", this.workspace_.getBlocksBoundingBox().width);
+
+  
+  this.setClipPathEnabled(false);
+  
+};
+
+Blockly.Flyout.prototype.unsetBlockFloat = function() {
+
+  this.isFloat_ = false;
+
+  this.svgGroup_.setAttribute("width", this.width_);
+
+  this.setClipPathEnabled(true);
+
+};
+
+
+

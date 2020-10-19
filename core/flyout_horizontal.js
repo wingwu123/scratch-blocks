@@ -240,6 +240,7 @@ Blockly.HorizontalFlyout.prototype.setBackgroundPath_ = function(width, height) 
     path.push('z');
   }
   this.svgBackground_.setAttribute('d', path.join(' '));
+
 };
 
 /**

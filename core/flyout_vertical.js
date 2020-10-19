@@ -170,10 +170,22 @@ Blockly.VerticalFlyout.prototype.createDom = function(tagName) {
         'x': '0'
       },
       clipPath);
-  this.workspace_.svgGroup_.setAttribute(
-      'clip-path', 'url(#blocklyBlockMenuClipPath)');
+
+  this.setClipPathEnabled(true);
 
   return this.svgGroup_;
+};
+
+Blockly.VerticalFlyout.prototype.setClipPathEnabled = function(enabled) {
+  
+  if(enabled) {
+    this.workspace_.svgGroup_.setAttribute(
+      'clip-path', 'url(#blocklyBlockMenuClipPath)');
+  }
+  else{
+    this.workspace_.svgGroup_.removeAttribute('clip-path');
+  }
+
 };
 
 /**
@@ -344,7 +356,14 @@ Blockly.VerticalFlyout.prototype.position = function() {
 
   this.svgGroup_.setAttribute("width", this.width_);
   this.svgGroup_.setAttribute("height", this.height_);
+
+  this.svgBackground_.setAttribute("width", this.width_);
+  this.svgBackground_.setAttribute("height", this.height_);
+
+  
+
   var transform = 'translate(' + x + 'px,' + y + 'px)';
+  this.pos = {x:x,y:y};
   Blockly.utils.setCssTransform(this.svgGroup_, transform);
 
   // Update the scrollbar (if one exists).
@@ -389,6 +408,12 @@ Blockly.VerticalFlyout.prototype.setBackgroundPath_ = function(width, height) {
   path.push('h', -width);
   path.push('z');
   this.svgBackground_.setAttribute('d', path.join(' '));
+
+  this.svgBackgroundLine_.setAttribute('x1', width);
+  this.svgBackgroundLine_.setAttribute('y1', 0);
+  this.svgBackgroundLine_.setAttribute('x2', width);
+  this.svgBackgroundLine_.setAttribute('y2', height);
+
 };
 
 /**
@@ -739,7 +764,7 @@ Blockly.VerticalFlyout.prototype.getClientRect = function() {
   var BIG_NUM = 1000000000;
   var x = flyoutRect.left;
   var y = flyoutRect.top;
-  var width = flyoutRect.width;
+  var width = this.isFloat_ ? this.width_ : flyoutRect.width;
   var height = flyoutRect.height;
 
   if (this.toolboxPosition_ == Blockly.TOOLBOX_AT_LEFT) {

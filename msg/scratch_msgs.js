@@ -4318,10 +4318,17 @@ Blockly.ScratchMsgs.locales["en"] =
     "MOTION_DC_MOTOR": "Set DC motor ID %1 port %2 power %3",
     "MOTION_SMART_SERVO_ANGLE": "Set smart servo ID %1 speed %2 angle %3",
     "MOTION_SMART_SERVO": "Set smart servo ID %1 speed %2",
-    "MOTION_SERVO": "Set servo ID %1 port %2 power %3",
+    "MOTION_SERVO": "Set servo ID %1 speed %2 power %3",
     "MOTION_STEP_MOTOR": "Set step motor port %1 power %2 steps %3",
     "MOTION_SET_ELECTROMAGNET": "Set electromagnet port %1 status %2",
     "MOTION_DIGITAL_OUTPUT": "Set digital output port %1 status %2",
+
+    "MOTION_ELECTRONMAGNET_ADSORBED": "adsorbed",
+    "MOTION_ELECTRONMAGNET_BREAK_OFF": "break off",
+
+    "MOTION_DIGITAL_OUTPUT_CONNECTED": "connected",
+    "MOTION_DIGITAL_OUTPUT_BREAK_OFF": "break off",
+
     "LOOKS_SET_EMOTION": "Set emotion screen ID %1 left eye port %2 right eye port %3",
     "LOOKS_OFF_EMOTION": "Off emotion screen left eye port %1 right eye port %2",
     "LOOKS_SET_SYMBOL": "Set symbol ID %1 port %2",
@@ -4334,6 +4341,18 @@ Blockly.ScratchMsgs.locales["en"] =
     "LOOKS_OFF_LED_LIGHT": "Off LED light port %1",
     "LOOKS_INTEGRATED_LED": "Set Integrated LED port %1 ID %2 R %3 G %4 B %5",
     "LOOKS_LED_STRIP": "Set LED strip port %1 ID %2 R %3 G %4 B %5",
+    "LOOKS_BEEP": "Set buzzer pitch %1 length %2",
+
+    "LOOKS_LED_COLOR_WHITE": "white",
+    "LOOKS_LED_COLOR_YELLOW": "yellow",
+    "LOOKS_LED_COLOR_PURPLE": "purple",
+    "LOOKS_LED_COLOR_CYAN": "cyan",
+    "LOOKS_LED_COLOR_RED": "red",
+    "LOOKS_LED_COLOR_GREEN": "green",
+    "LOOKS_LED_COLOR_BLUE": "blue",
+    "LOOKS_LED_COLOR_BLACK": "black",
+
+    "LOOKS_INTEGRATED_LED_ID_ALL": "all",
 
     "SENSING_GRAY_DETECTED_LINE": "Single gray port %1 detected %2",
     "SENSING_GRAY_VALUE": "Single gray port %1 value",
@@ -4348,14 +4367,20 @@ Blockly.ScratchMsgs.locales["en"] =
     "SENSING_INFRARED": "Infrared sensor port %1 value",
     "SENSING_POTENTIOMETER": "Potentiometer port %1 value",
     "SENSING_BLUETOOTH_RECEIVER": "Bluetooth receiver value",
-    "SENSING_BLUETOOTH_STICK": "Bluetooth stick key %1 value",
+    "SENSING_BLUETOOTH_HANDLE": "Bluetooth handle key %1 value",
     "SENSING_JOINTED_ARM": "Jointed arm port %1 axis %2 value",
     "SENSING_TOUCH_BUTTON": "Touch button port %1 touched",
     "SENSING_KEY_BUTTON": "Key button port %1 key %2 pressed",
     "SENSING_GYROSCOPE": "Gyroscope sensor port %1 axis %2 angle value",
     "SENSING_LIMIT_SWITCH": "Limit switch port %1 pressed",
     "SENSING_WATER_TEMPERATURE": "Water temperature sensor port %1 value",
-    "SENSING_ANALOG_INPUT": "Analog input port %1 value"
+    "SENSING_ANALOG_INPUT": "Analog input port %1 value",
+
+    "SENSING_GRAY_DETECTED_LINE_BLACK": "black",
+    "SENSING_GRAY_DETECTED_LINE_WHITE": "white",
+
+    "SENSING_JOINTED_ARM_AXIS_X": "X-axis",
+    "SENSING_JOINTED_ARM_AXIS_Y": "Y-axis"
 };
 
 Blockly.ScratchMsgs.locales["es"] =
@@ -18140,10 +18165,17 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "MOTION_DC_MOTOR": "设置直流电机 ID %1 端口 %2 动力 %3",
     "MOTION_SMART_SERVO_ANGLE": "设置智能舵机 ID %1 速度 %2 角度 %3",
     "MOTION_SMART_SERVO": "设置智能舵机 ID %1 速度 %2",
-    "MOTION_SERVO": "设置舵机 ID %1 端口 %2 动力 %3",
-    "MOTION_STEP_MOTOR": "设置步进电机 端口 %1 动力 %2 每转 %3 步",
+    "MOTION_SERVO": "设置舵机 ID %1 速度 %2 动力 %3",
+    "MOTION_STEP_MOTOR": "设置步进电机 端口 %1 动力 %2 转动 %3 步",
     "MOTION_SET_ELECTROMAGNET": "设置电磁铁 端口 %1 状态 %2",
     "MOTION_DIGITAL_OUTPUT": "设置数字输出 端口 %1 状态 %2",
+
+    "MOTION_ELECTRONMAGNET_ADSORBED": "吸附",
+    "MOTION_ELECTRONMAGNET_BREAK_OFF": "断开",
+
+    "MOTION_DIGITAL_OUTPUT_CONNECTED": "接通",
+    "MOTION_DIGITAL_OUTPUT_BREAK_OFF": "断开",
+
     "LOOKS_SET_EMOTION": "设置情感屏 ID %1 左眼端口 %2 右眼端口 %3",
     "LOOKS_OFF_EMOTION": "关闭情感屏 左眼端口 %1 右眼端口 %2",
     "LOOKS_SET_SYMBOL": "设置情感屏 符号 ID %1 端口 %2", 
@@ -18156,6 +18188,18 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "LOOKS_OFF_LED_LIGHT": "关闭LED灯 端口 %1",
     "LOOKS_INTEGRATED_LED": "设置集成LED 端口 %1 灯珠编号 %2 R %3 G %4 B %5",
     "LOOKS_LED_STRIP": "设置LED灯带 端口 %1 灯珠编号 %2 R %3 G %4 B %5",
+    "LOOKS_BEEP": "设置蜂鸣器 音高 %1 音长 %2",
+
+    "LOOKS_LED_COLOR_WHITE": "白",
+    "LOOKS_LED_COLOR_YELLOW": "黄",
+    "LOOKS_LED_COLOR_PURPLE": "紫",
+    "LOOKS_LED_COLOR_CYAN": "青",
+    "LOOKS_LED_COLOR_RED": "红",
+    "LOOKS_LED_COLOR_GREEN": "绿",
+    "LOOKS_LED_COLOR_BLUE": "蓝",
+    "LOOKS_LED_COLOR_BLACK": "黑",
+
+    "LOOKS_INTEGRATED_LED_ID_ALL": "全部",
 
     "SENSING_GRAY_DETECTED_LINE": "单灰度 端口 %1 检测到 %2",
     "SENSING_GRAY_VALUE": "单灰度 端口 %1 探测值",
@@ -18170,7 +18214,7 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "SENSING_INFRARED": "红外传感器 端口 %1 值",
     "SENSING_POTENTIOMETER": "电位器 端口 %1 值",
     "SENSING_BLUETOOTH_RECEIVER": "蓝牙接收器值",
-    "SENSING_BLUETOOTH_STICK": "蓝牙遥杆 按键 %1 值",
+    "SENSING_BLUETOOTH_HANDLE": "蓝牙手柄 按键 %1 值",
     
     "SENSING_JOINTED_ARM": "摇杆传感器 端口 %1 轴 %2 值",
     "SENSING_TOUCH_BUTTON": "触摸开关 端口 %1 被按下",
@@ -18178,7 +18222,13 @@ Blockly.ScratchMsgs.locales["zh-cn"] =
     "SENSING_GYROSCOPE": "陀螺仪传感器 端口 %1 轴 %2 角度",
     "SENSING_LIMIT_SWITCH": "限位开关 端口 %1 被按下",
     "SENSING_WATER_TEMPERATURE": "水温传感器 端口 %1 值",
-    "SENSING_ANALOG_INPUT": "模拟输入 端口 %1 值"
+    "SENSING_ANALOG_INPUT": "模拟输入 端口 %1 值",
+
+    "SENSING_GRAY_DETECTED_LINE_BLACK": "黑线",
+    "SENSING_GRAY_DETECTED_LINE_WHITE": "白线",
+
+    "SENSING_JOINTED_ARM_AXIS_X": "X轴",
+    "SENSING_JOINTED_ARM_AXIS_Y": "Y轴"
 };
 
 Blockly.ScratchMsgs.locales["zh-tw"] =
@@ -18474,10 +18524,17 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "MOTION_DC_MOTOR": "设置直流电机 ID %1 端口 %2 动力 %3",
     "MOTION_SMART_SERVO_ANGLE": "设置智能舵机 ID %1 速度 %2 角度 %3",
     "MOTION_SMART_SERVO": "设置智能舵机 ID %1 速度 %2",
-    "MOTION_SERVO": "设置舵机 ID %1 端口 %2 动力 %3",
-    "MOTION_STEP_MOTOR": "设置步进电机 端口 %1 动力 %2 每转 %3 步",
+    "MOTION_SERVO": "设置舵机 ID %1 速度 %2 动力 %3",
+    "MOTION_STEP_MOTOR": "设置步进电机 端口 %1 动力 %2 转动 %3 步",
     "MOTION_SET_ELECTROMAGNET": "设置电磁铁 端口 %1 状态 %2",
     "MOTION_DIGITAL_OUTPUT": "设置数字输出 端口 %1 状态 %2",
+
+    "MOTION_ELECTRONMAGNET_ADSORBED": "吸附",
+    "MOTION_ELECTRONMAGNET_BREAK_OFF": "断开",
+
+    "MOTION_DIGITAL_OUTPUT_CONNECTED": "接通",
+    "MOTION_DIGITAL_OUTPUT_BREAK_OFF": "断开",
+
     "LOOKS_SET_EMOTION": "设置情感屏 ID %1 左眼端口 %2 右眼端口 %3",
     "LOOKS_OFF_EMOTION": "关闭情感屏 左眼端口 %1 右眼端口 %2",
     "LOOKS_SET_SYMBOL": "设置情感屏 符号 ID %1 端口 %2",
@@ -18490,6 +18547,18 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "LOOKS_OFF_LED_LIGHT": "关闭LED灯 端口 %1",
     "LOOKS_INTEGRATED_LED": "设置集成LED 端口 %1 灯珠编号 %2 R %3 G %4 B %5",
     "LOOKS_LED_STRIP": "设置LED灯带 端口 %1 灯珠编号 %2 R %3 G %4 B %5",
+    "LOOKS_BEEP": "设置蜂鸣器 音高 %1 音长 %2",
+
+    "LOOKS_LED_COLOR_WHITE": "白",
+    "LOOKS_LED_COLOR_YELLOW": "黄",
+    "LOOKS_LED_COLOR_PURPLE": "紫",
+    "LOOKS_LED_COLOR_CYAN": "青",
+    "LOOKS_LED_COLOR_RED": "红",
+    "LOOKS_LED_COLOR_GREEN": "绿",
+    "LOOKS_LED_COLOR_BLUE": "蓝",
+    "LOOKS_LED_COLOR_BLACK": "黑",
+
+    "LOOKS_INTEGRATED_LED_ID_ALL": "全部",
     
     "SENSING_GRAY_DETECTED_LINE": "单灰度 端口 %1 检测到 %2",
     "SENSING_GRAY_VALUE": "单灰度 端口 %1 探测值",
@@ -18504,13 +18573,19 @@ Blockly.ScratchMsgs.locales["zh-tw"] =
     "SENSING_INFRARED": "红外传感器 端口 %1 值",
     "SENSING_POTENTIOMETER": "电位器 端口 %1 值",
     "SENSING_BLUETOOTH_RECEIVER": "蓝牙接收器值",
-    "SENSING_BLUETOOTH_STICK": "蓝牙遥杆 按键 %1 值",
+    "SENSING_BLUETOOTH_HANDLE": "蓝牙手柄 按键 %1 值",
     "SENSING_JOINTED_ARM": "摇杆传感器 端口 %1 轴 %2 值",
     "SENSING_TOUCH_BUTTON": "触摸开关 端口 %1 被按下",
     "SENSING_KEY_BUTTON": "按键开关 端口 %1 按键 %2 被按下",
     "SENSING_GYROSCOPE": "陀螺仪传感器 端口 %1 轴 %2 角度",
     "SENSING_LIMIT_SWITCH": "限位开关 端口 %1 被按下",
     "SENSING_WATER_TEMPERATURE": "水温传感器 端口 %1 值",
-    "SENSING_ANALOG_INPUT": "模拟输入 端口 %1 值"
+    "SENSING_ANALOG_INPUT": "模拟输入 端口 %1 值",
+
+    "SENSING_GRAY_DETECTED_LINE_BLACK": "黑线",
+    "SENSING_GRAY_DETECTED_LINE_WHITE": "白线",
+
+    "SENSING_JOINTED_ARM_AXIS_X": "X轴",
+    "SENSING_JOINTED_ARM_AXIS_Y": "Y轴"
 };
 // End of combined translations

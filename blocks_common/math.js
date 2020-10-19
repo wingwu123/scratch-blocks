@@ -370,7 +370,7 @@ Blockly.Blocks['math_decimal_0_180'] = {
   }
 };
 
-Blockly.Blocks['math_decimal_0_1k'] = {
+Blockly.Blocks['math_decimal_0_100k'] = {
   /**
    * Block for whole number value, no negatives or decimals.
    * @this Blockly.Block
@@ -383,7 +383,7 @@ Blockly.Blocks['math_decimal_0_1k'] = {
           "type": "field_decimal",
           "name": "NUM",
           "validators":[
-            {"type":"minmax", "min": 0, "max": 1000},
+            {"type":"minmax", "min": 0, "max": 100000},
             {"type":"regexp", "pattern": /^([0-9]{0,6})$/}
           ]
         }

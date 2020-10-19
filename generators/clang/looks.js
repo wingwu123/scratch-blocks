@@ -181,4 +181,17 @@ Blockly.Clang['looks_led_strip'] = function(block) {
 };
 
 
+Blockly.Clang['looks_beep'] = function(block) {
+
+  var code = '';
+  var pitch = block.getFieldValue('PITCH');
+
+  var len = block.getFieldValue('LEN');
+
+  code = 'beep_play(' + pitch + ', ' + len + ');';
+
+  return code + '\n';
+};
+
+
 

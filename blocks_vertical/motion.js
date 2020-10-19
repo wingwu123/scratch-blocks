@@ -804,9 +804,9 @@ Blockly.Blocks.motion.ELECTRONMAGNET_PORT_MENU_OPEION = [
   ['6', '7']
 ];
 
+
 Blockly.Blocks.motion.ELECTRONMAGNET_STATUS_MENU_OPEION = [
-  ['吸附', '1'],
-  ['断开', '2']
+
 ];
 
 Blockly.Blocks['motion_set_electromagnet'] = {
@@ -826,7 +826,10 @@ Blockly.Blocks['motion_set_electromagnet'] = {
         {
           "type": "field_dropdown",
           "name": "STATUS",
-          "options": Blockly.Blocks.motion.ELECTRONMAGNET_STATUS_MENU_OPEION
+          "options": [
+            [Blockly.Msg.MOTION_ELECTRONMAGNET_ADSORBED /*'吸附'*/, '1'],
+            [Blockly.Msg.MOTION_ELECTRONMAGNET_BREAK_OFF /*'断开'*/, '2']
+          ]
         }
       ],
       "category": Blockly.Categories.motion,
@@ -837,8 +840,7 @@ Blockly.Blocks['motion_set_electromagnet'] = {
 
 
 Blockly.Blocks.motion.DIGITAL_OUTPUT_STATUS_MENU_OPEION = [
-  ['接通', '1'],
-  ['断开', '2']
+
 ];
 
 Blockly.Blocks['motion_set_digital_output'] = {
@@ -858,7 +860,10 @@ Blockly.Blocks['motion_set_digital_output'] = {
         {
           "type": "field_dropdown",
           "name": "STATUS",
-          "options": Blockly.Blocks.motion.DIGITAL_OUTPUT_STATUS_MENU_OPEION
+          "options":  [
+            [Blockly.Msg.MOTION_DIGITAL_OUTPUT_CONNECTED /*'接通'*/, '1'],
+            [Blockly.Msg.MOTION_DIGITAL_OUTPUT_BREAK_OFF /*'断开'*/, '2']
+          ]
         }
       ],
       "category": Blockly.Categories.motion,
